@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class PostComment extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['id'];
 }
