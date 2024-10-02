@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -9,9 +10,15 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('users.index');
+        $users = User::query()
+            ->when($request->input('q'), fn ($query) => $query->where('name', 'like', "%{$request->q}%"))  # search user
+            ->paginate(
+                perPage: $request->input('per_page', 10),
+                page: $request->input('page', 1));
+
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -19,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.create');
     }
 
     /**
@@ -27,13 +34,31 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator($request->all(), [
+            'name' => 'required',
+            'username' => 'required|unique:users,username',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|confirmed',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()
+                ->route('users.create')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        User::create($validator->validated());
+
+        return redirect()
+            ->route('users.index')
+            ->with('success', 'User created successfully.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(User $user)
     {
         //
     }
@@ -41,7 +66,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(User $user)
     {
         //
     }
@@ -49,16 +74,20 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user)
     {
-        //
+        
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return redirect()
+            ->route('users.index')
+            ->with('success', 'User deleted successfully.');
     }
 }
