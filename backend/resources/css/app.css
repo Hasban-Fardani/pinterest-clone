@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+input, input[type="checkbox"] {
+    @apply bg-white px-2 border;
+}
