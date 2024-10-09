@@ -16,8 +16,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('/users', UserController::class);
     Route::resource('/posts', PostController::class);
 
-    Route::get('/reviews', [ReviewCommentController::class, 'index'])
-        ->name('reviews');
+    Route::resource('reviews', ReviewCommentController::class)
+        ->only('index', 'update');
 
     Route::prefix('profile')->group(function () {
         Route::get('/', [ProfileController::class, 'edit'])->name('profile.edit');

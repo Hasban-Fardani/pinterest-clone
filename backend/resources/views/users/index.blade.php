@@ -33,6 +33,9 @@
 
                         </button>
                     </form>
+                    @if (request('q'))
+                    <p>search: {{ request('q') }} - {{ $users->total() }} results</p>
+                    @endif
                     <table class="table">
                         <!-- head -->
                         <thead>

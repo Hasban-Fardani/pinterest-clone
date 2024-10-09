@@ -8,6 +8,7 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/views/**/**/*.blade.php',
+        "./node_modules/flyonui/dist/js/*.js",
     ],
 
     theme: {
@@ -19,7 +20,9 @@ export default {
     },
 
     plugins: [
-        require('daisyui'),
+        require("flyonui"),
+        require("flyonui/plugin"),
+        // require('daisyui'),
     ],
 
     darkMode: 'class',

@@ -2,63 +2,47 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PostComment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ReviewCommentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('reviews');
-    }
+        $reviews = PostComment::query()
+            ->with(['user:id,name', 'post:id,title,image']);
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+        $reviews->when($request->input('q'), function ($reviews, $search) {
+            $reviews->where(function ($query) use ($search) {
+                $query->where('comment', 'like', '%' . $search . '%');
+                $query->orWhereHas('post', function ($query) use ($search) {
+                    $query->where('title', 'like', '%' . $search . '%');
+                });
+            });
+        });
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        $reviews = $reviews->paginate(10);
+        return view('reviews.index', compact('reviews'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, PostComment $review)
     {
-        //
-    }
+        $validator = Validator::make($request->all(), [
+            'status' => ['required', 'in:approved,rejected']
+        ]);
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+
+        $review->update($validator->validated());
+        return redirect()->route('reviews.index')->with('success', 'Review updated successfully');
     }
 }
