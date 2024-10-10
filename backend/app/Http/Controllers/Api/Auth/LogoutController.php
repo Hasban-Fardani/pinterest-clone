@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 /**
- * @group 1. Authentication
+ * Logout
  */
 class LogoutController extends Controller
 {

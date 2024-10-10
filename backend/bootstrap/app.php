@@ -1,8 +1,10 @@
 <?php
 
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Validation\ValidationException;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -15,5 +17,22 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        //
+        $exceptions->render(function (ValidationException $exception) {
+            return response()->json([
+                'message' => "validation error",
+                'errors' => $exception->errors(),
+            ], 422);
+        });
+
+        $exceptions->render(function (AuthorizationException $exception) {
+            return response()->json([
+                'message' => 'Unauthorized',
+            ], 403);
+        });
+
+        $exceptions->render(function (Exception $exception) {
+            return response()->json([
+                'message' => env('APP_DEBUG', false) == true ? $exception->getMessage() : 'Server Error',
+            ], 500);
+        });
     })->create();

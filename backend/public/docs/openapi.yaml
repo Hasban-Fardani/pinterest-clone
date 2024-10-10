@@ -15,7 +15,7 @@ paths:
       parameters: []
       responses: {  }
       tags:
-        - '1. Authentication'
+        - Endpoints
       requestBody:
         required: true
         content:
@@ -26,11 +26,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: mbeatty@example.net
+                  example: katheryn.monahan@example.net
                 password:
                   type: string
                   description: ''
-                  example: et
+                  example: quibusdam
               required:
                 - email
                 - password
@@ -43,7 +43,7 @@ paths:
       parameters: []
       responses: {  }
       tags:
-        - '1. Authentication'
+        - Endpoints
       requestBody:
         required: true
         content:
@@ -54,39 +54,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: jaren.hudson@example.net
+                  example: gutmann.greta@example.net
                 password:
                   type: string
                   description: ''
-                  example: temporibus
-              required:
-                - email
-                - password
-      security: []
-  /api/v1/logout:
-    post:
-      summary: ''
-      operationId: postApiV1Logout
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - '1. Authentication'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                  description: 'Must be a valid email address.'
-                  example: zella.predovic@example.org
-                password:
-                  type: string
-                  description: ''
-                  example: porro
+                  example: alias
               required:
                 - email
                 - password
@@ -111,12 +83,40 @@ paths:
                     type: string
                     example: 'Server Error'
       tags:
-        - '1. Authentication'
+        - Endpoints
+      security: []
+  /api/v1/logout:
+    post:
+      summary: ''
+      operationId: postApiV1Logout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: olehner@example.org
+                password:
+                  type: string
+                  description: ''
+                  example: sed
+              required:
+                - email
+                - password
       security: []
   /api/v1/posts:
     get:
-      summary: 'Display a listing of the resource.'
-      operationId: displayAListingOfTheResource
+      summary: ''
+      operationId: getApiV1Posts
       description: ''
       parameters: []
       responses:
@@ -136,18 +136,18 @@ paths:
         - Endpoints
       security: []
     post:
-      summary: 'Store a newly created resource in storage.'
-      operationId: storeANewlyCreatedResourceInStorage
+      summary: ''
+      operationId: postApiV1Posts
       description: ''
       parameters: []
       responses: {  }
       tags:
         - Endpoints
       security: []
-  '/api/v1/posts/{id}':
+  '/api/v1/posts/{post}':
     get:
-      summary: 'Display the specified resource.'
-      operationId: displayTheSpecifiedResource
+      summary: ''
+      operationId: getApiV1PostsPost
       description: ''
       parameters: []
       responses:
@@ -166,98 +166,19 @@ paths:
       tags:
         - Endpoints
       security: []
-    put:
-      summary: 'Update the specified resource in storage.'
-      operationId: updateTheSpecifiedResourceInStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    delete:
-      summary: 'Remove the specified resource from storage.'
-      operationId: removeTheSpecifiedResourceFromStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
     parameters:
       -
         in: path
-        name: id
-        description: 'The ID of the post.'
-        example: laudantium
+        name: post
+        description: 'The post.'
+        example: reprehenderit
         required: true
         schema:
           type: string
-  /api/v1/postLikes:
-    get:
-      summary: 'Display a listing of the resource.'
-      operationId: displayAListingOfTheResource
-      description: ''
-      parameters: []
-      responses:
-        500:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Server Error'
-                properties:
-                  message:
-                    type: string
-                    example: 'Server Error'
-      tags:
-        - Endpoints
-      security: []
+  '/api/v1/posts/{post}/like':
     post:
-      summary: 'Store a newly created resource in storage.'
-      operationId: storeANewlyCreatedResourceInStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-  '/api/v1/postLikes/{id}':
-    get:
-      summary: 'Display the specified resource.'
-      operationId: displayTheSpecifiedResource
-      description: ''
-      parameters: []
-      responses:
-        500:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Server Error'
-                properties:
-                  message:
-                    type: string
-                    example: 'Server Error'
-      tags:
-        - Endpoints
-      security: []
-    put:
-      summary: 'Update the specified resource in storage.'
-      operationId: updateTheSpecifiedResourceInStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    delete:
-      summary: 'Remove the specified resource from storage.'
-      operationId: removeTheSpecifiedResourceFromStorage
+      summary: ''
+      operationId: postApiV1PostsPostLike
       description: ''
       parameters: []
       responses: {  }
@@ -267,77 +188,16 @@ paths:
     parameters:
       -
         in: path
-        name: id
-        description: 'The ID of the postLike.'
-        example: occaecati
+        name: post
+        description: 'The post.'
+        example: asperiores
         required: true
         schema:
           type: string
-  /api/v1/postComments:
-    get:
-      summary: 'Display a listing of the resource.'
-      operationId: displayAListingOfTheResource
-      description: ''
-      parameters: []
-      responses:
-        500:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Server Error'
-                properties:
-                  message:
-                    type: string
-                    example: 'Server Error'
-      tags:
-        - Endpoints
-      security: []
+  '/api/v1/posts/{post}/comment':
     post:
-      summary: 'Store a newly created resource in storage.'
-      operationId: storeANewlyCreatedResourceInStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-  '/api/v1/postComments/{id}':
-    get:
-      summary: 'Display the specified resource.'
-      operationId: displayTheSpecifiedResource
-      description: ''
-      parameters: []
-      responses:
-        500:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Server Error'
-                properties:
-                  message:
-                    type: string
-                    example: 'Server Error'
-      tags:
-        - Endpoints
-      security: []
-    put:
-      summary: 'Update the specified resource in storage.'
-      operationId: updateTheSpecifiedResourceInStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      security: []
-    delete:
-      summary: 'Remove the specified resource from storage.'
-      operationId: removeTheSpecifiedResourceFromStorage
+      summary: ''
+      operationId: postApiV1PostsPostComment
       description: ''
       parameters: []
       responses: {  }
@@ -347,16 +207,13 @@ paths:
     parameters:
       -
         in: path
-        name: id
-        description: 'The ID of the postComment.'
-        example: dolores
+        name: post
+        description: 'The post.'
+        example: eum
         required: true
         schema:
           type: string
 tags:
-  -
-    name: '1. Authentication'
-    description: ''
   -
     name: Endpoints
     description: ''

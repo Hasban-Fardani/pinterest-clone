@@ -4,10 +4,11 @@ namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 /**
- * @group 1. Authentication
+ * Login
  */
 class LoginController extends Controller
 {
@@ -25,13 +26,16 @@ class LoginController extends Controller
             ], 422);
         }
 
-        if (! $token = auth()->attempt($validator->validated())) {
+        if (!Auth::attempt($validator->validated())) {
             return response()->json([
                 'message' => 'Unauthorized',
             ], 401);
         }
 
+        $user = Auth::user();
+        $token = $user->createToken('accessToken')->plainTextToken;
         return response()->json([
+            'message' => 'login success',
             'access_token' => $token,
         ]);
     }
