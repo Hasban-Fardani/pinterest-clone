@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Validator;
 
 /**
  * Login
+ *
+ * @unauthenticated
  */
 class LoginController extends Controller
 {

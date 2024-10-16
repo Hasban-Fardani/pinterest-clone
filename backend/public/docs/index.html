@@ -83,6 +83,12 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-logout">
                                 <a href="#endpoints-POSTapi-v1-logout">POST api/v1/logout</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-v1-profile">
+                                <a href="#endpoints-PUTapi-v1-profile">PUT api/v1/profile</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-v1-reset-password">
+                                <a href="#endpoints-PUTapi-v1-reset-password">PUT api/v1/reset-password</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-posts">
                                 <a href="#endpoints-GETapi-v1-posts">GET api/v1/posts</a>
                             </li>
@@ -94,6 +100,9 @@
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-PUTapi-v1-posts--id-">
                                 <a href="#endpoints-PUTapi-v1-posts--id-">PUT api/v1/posts/{id}</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-v1-posts--id-">
+                                <a href="#endpoints-DELETEapi-v1-posts--id-">DELETE api/v1/posts/{id}</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-posts--post_id--like">
                                 <a href="#endpoints-POSTapi-v1-posts--post_id--like">POST api/v1/posts/{post_id}/like</a>
@@ -131,7 +140,9 @@
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
-<p>This API is not authenticated.</p>
+<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
+<p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
+<p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
         <h1 id="endpoints">Endpoints</h1>
 
@@ -154,8 +165,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"schulist.amparo@example.org\",
-    \"password\": \"dolorem\"
+    \"email\": \"remington.koss@example.net\",
+    \"password\": \"enim\"
 }"
 </code></pre></div>
 
@@ -171,8 +182,8 @@ const headers = {
 };
 
 let body = {
-    "email": "schulist.amparo@example.org",
-    "password": "dolorem"
+    "email": "remington.koss@example.net",
+    "password": "enim"
 };
 
 fetch(url, {
@@ -261,10 +272,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-login"
-               value="schulist.amparo@example.org"
+               value="remington.koss@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>schulist.amparo@example.org</code></p>
+<p>Must be a valid email address. Example: <code>remington.koss@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -272,16 +283,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-v1-login"
-               value="dolorem"
+               value="enim"
                data-component="body">
     <br>
-<p>Example: <code>dolorem</code></p>
+<p>Example: <code>enim</code></p>
         </div>
         </form>
 
                     <h2 id="endpoints-POSTapi-v1-register">POST api/v1/register</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -293,13 +305,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost:8000/api/v1/register" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"eo\",
-    \"username\": \"ut\",
-    \"email\": \"pagac.enrique@example.net\",
-    \"password\": \";zC:md\"
+    \"name\": \"cvm\",
+    \"username\": \"ab\",
+    \"email\": \"gwhite@example.net\",
+    \"password\": \"SymOcmU\'\"
 }"
 </code></pre></div>
 
@@ -310,15 +323,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "name": "eo",
-    "username": "ut",
-    "email": "pagac.enrique@example.net",
-    "password": ";zC:md"
+    "name": "cvm",
+    "username": "ab",
+    "email": "gwhite@example.net",
+    "password": "SymOcmU'"
 };
 
 fetch(url, {
@@ -348,7 +362,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-v1-register" data-method="POST"
       data-path="api/v1/register"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -379,6 +393,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-register"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -407,10 +432,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-register"
-               value="eo"
+               value="cvm"
                data-component="body">
     <br>
-<p>Must be between 2 and 100 characters. Example: <code>eo</code></p>
+<p>Must be between 2 and 100 characters. Example: <code>cvm</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>username</code></b>&nbsp;&nbsp;
@@ -418,10 +443,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="username"                data-endpoint="POSTapi-v1-register"
-               value="ut"
+               value="ab"
                data-component="body">
     <br>
-<p>Example: <code>ut</code></p>
+<p>Example: <code>ab</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -429,10 +454,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-register"
-               value="pagac.enrique@example.net"
+               value="gwhite@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 100 characters. Example: <code>pagac.enrique@example.net</code></p>
+<p>Must be a valid email address. Must not be greater than 100 characters. Example: <code>gwhite@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -440,10 +465,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-v1-register"
-               value=";zC:md"
+               value="SymOcmU'"
                data-component="body">
     <br>
-<p>Must be at least 6 characters. Example: <code>;zC:md</code></p>
+<p>Must be at least 6 characters. Example: <code>SymOcmU'</code></p>
         </div>
         </form>
 
@@ -462,6 +487,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/v1/user" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -472,6 +498,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -485,7 +512,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-v1-user">
             <blockquote>
-            <p>Example response (500):</p>
+            <p>Example response (200):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -498,7 +525,18 @@ access-control-allow-credentials: true
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;authenticated&quot;: true,
+    &quot;user&quot;: {
+        &quot;id&quot;: 2,
+        &quot;name&quot;: &quot;user&quot;,
+        &quot;username&quot;: &quot;user&quot;,
+        &quot;email&quot;: &quot;user@localhost&quot;,
+        &quot;email_verified_at&quot;: &quot;2024-10-16T07:29:56.000000Z&quot;,
+        &quot;role&quot;: &quot;user&quot;,
+        &quot;created_at&quot;: &quot;2024-10-16T07:29:56.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2024-10-16T07:29:56.000000Z&quot;
+    },
+    &quot;token&quot;: &quot;7|LBVfLK4sBKpmcFF6lmVp6fXJaq2VFoSO0sWnnc47ab525cce&quot;
 }</code>
  </pre>
     </span>
@@ -550,6 +588,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-user"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -590,8 +639,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"feil.fleta@example.net\",
-    \"password\": \"distinctio\"
+    \"email\": \"nerdman@example.com\",
+    \"password\": \"commodi\"
 }"
 </code></pre></div>
 
@@ -607,8 +656,8 @@ const headers = {
 };
 
 let body = {
-    "email": "feil.fleta@example.net",
-    "password": "distinctio"
+    "email": "nerdman@example.com",
+    "password": "commodi"
 };
 
 fetch(url, {
@@ -697,10 +746,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-logout"
-               value="feil.fleta@example.net"
+               value="nerdman@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>feil.fleta@example.net</code></p>
+<p>Must be a valid email address. Example: <code>nerdman@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -708,16 +757,329 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-v1-logout"
-               value="distinctio"
+               value="commodi"
                data-component="body">
     <br>
-<p>Example: <code>distinctio</code></p>
+<p>Example: <code>commodi</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-PUTapi-v1-profile">PUT api/v1/profile</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-profile">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost:8000/api/v1/profile" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"fklq\",
+    \"username\": \"ww\",
+    \"email\": \"jena.crooks@example.com\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/profile"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "fklq",
+    "username": "ww",
+    "email": "jena.crooks@example.com"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-profile">
+</span>
+<span id="execution-results-PUTapi-v1-profile" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-profile"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-profile"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-profile" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-profile">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-v1-profile" data-method="PUT"
+      data-path="api/v1/profile"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-profile', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-profile"
+                    onclick="tryItOut('PUTapi-v1-profile');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-profile"
+                    onclick="cancelTryOut('PUTapi-v1-profile');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-profile"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/profile</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-profile"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-v1-profile"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-v1-profile"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="PUTapi-v1-profile"
+               value="fklq"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>fklq</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>username</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="username"                data-endpoint="PUTapi-v1-profile"
+               value="ww"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>ww</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="PUTapi-v1-profile"
+               value="jena.crooks@example.com"
+               data-component="body">
+    <br>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>jena.crooks@example.com</code></p>
+        </div>
+        </form>
+
+                    <h2 id="endpoints-PUTapi-v1-reset-password">PUT api/v1/reset-password</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-reset-password">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost:8000/api/v1/reset-password" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"password\": \"zjPAr-[\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/reset-password"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "password": "zjPAr-["
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-v1-reset-password">
+</span>
+<span id="execution-results-PUTapi-v1-reset-password" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-reset-password"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-reset-password"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-reset-password" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-reset-password">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-v1-reset-password" data-method="PUT"
+      data-path="api/v1/reset-password"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-reset-password', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-reset-password"
+                    onclick="tryItOut('PUTapi-v1-reset-password');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-reset-password"
+                    onclick="cancelTryOut('PUTapi-v1-reset-password');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-reset-password"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/reset-password</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-reset-password"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-v1-reset-password"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-v1-reset-password"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password"                data-endpoint="PUTapi-v1-reset-password"
+               value="zjPAr-["
+               data-component="body">
+    <br>
+<p>Must be at least 8 characters. Example: <code>zjPAr-[</code></p>
         </div>
         </form>
 
                     <h2 id="endpoints-GETapi-v1-posts">GET api/v1/posts</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -729,6 +1091,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/v1/posts" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -739,6 +1102,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -752,7 +1116,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-v1-posts">
             <blockquote>
-            <p>Example response (500):</p>
+            <p>Example response (200):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -765,7 +1129,132 @@ access-control-allow-credentials: true
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;message&quot;: &quot;success get all post&quot;,
+    &quot;current_page&quot;: 1,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 34,
+            &quot;title&quot;: &quot;Coba upload api&quot;,
+            &quot;image&quot;: &quot;http://localhost:8000/storage/posts/2/gQZuD45VXp_default.png&quot;,
+            &quot;user_id&quot;: 2,
+            &quot;created_at&quot;: &quot;2024-10-16T09:20:01.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-10-16T09:20:01.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 33,
+            &quot;title&quot;: &quot;hello world&quot;,
+            &quot;image&quot;: &quot;http://localhost:8000/storage/posts/2/aaRp2bQqOz_default.png&quot;,
+            &quot;user_id&quot;: 2,
+            &quot;created_at&quot;: &quot;2024-10-16T08:32:24.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-10-16T08:32:24.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 31,
+            &quot;title&quot;: &quot;bukan coba coba&quot;,
+            &quot;image&quot;: &quot;http://localhost:8000/storage/posts/1/sh3mzvFY6M_mirip kopeah.jpg&quot;,
+            &quot;user_id&quot;: 2,
+            &quot;created_at&quot;: &quot;2024-10-16T08:15:52.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-10-16T08:42:43.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 1,
+            &quot;title&quot;: &quot;Enim rem vel voluptas repellat ea.&quot;,
+            &quot;image&quot;: &quot;http://localhost:8000/storage/posts/104585f5c9cc3d21cb264b9c1136bfcb.png&quot;,
+            &quot;user_id&quot;: 6,
+            &quot;created_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;title&quot;: &quot;Mollitia omnis necessitatibus voluptates similique inventore illum enim.&quot;,
+            &quot;image&quot;: &quot;http://localhost:8000/storage/posts/1/k3Jb9LV9Lf_1705853478249.jpeg&quot;,
+            &quot;user_id&quot;: 4,
+            &quot;created_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-10-16T08:43:01.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;title&quot;: &quot;Perferendis omnis iusto delectus nisi est quo.&quot;,
+            &quot;image&quot;: &quot;http://localhost:8000/storage/posts/d39a9170ec0a45932d7f89c4a34fcdeb.png&quot;,
+            &quot;user_id&quot;: 3,
+            &quot;created_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 4,
+            &quot;title&quot;: &quot;Laudantium vitae officiis fuga velit.&quot;,
+            &quot;image&quot;: &quot;http://localhost:8000/storage/posts/1/JTSW6RcuIA_Screenshot from 2024-01-22 18-03-34.png&quot;,
+            &quot;user_id&quot;: 6,
+            &quot;created_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-10-16T08:43:23.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;title&quot;: &quot;Veritatis dolorem iste quae labore quisquam aut.&quot;,
+            &quot;image&quot;: &quot;http://localhost:8000/storage/posts/1/BeG8YlTxnM_liga-smk-2023-slicing-brawl.png&quot;,
+            &quot;user_id&quot;: 9,
+            &quot;created_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-10-16T08:43:41.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;title&quot;: &quot;How to train junior developer&quot;,
+            &quot;image&quot;: &quot;http://localhost:8000/storage/posts/1/Bcn7hRI9nA_1705912910365.jpeg&quot;,
+            &quot;user_id&quot;: 9,
+            &quot;created_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-10-16T08:47:10.000000Z&quot;
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;title&quot;: &quot;Est consequatur et molestiae a.&quot;,
+            &quot;image&quot;: &quot;http://localhost:8000/storage/posts/d73d1ca685bfb17a9baf7f6baea6f0f0.png&quot;,
+            &quot;user_id&quot;: 9,
+            &quot;created_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;
+        }
+    ],
+    &quot;first_page_url&quot;: &quot;http://localhost:8000/api/v1/posts?page=1&quot;,
+    &quot;from&quot;: 1,
+    &quot;last_page&quot;: 4,
+    &quot;last_page_url&quot;: &quot;http://localhost:8000/api/v1/posts?page=4&quot;,
+    &quot;links&quot;: [
+        {
+            &quot;url&quot;: null,
+            &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+            &quot;active&quot;: false
+        },
+        {
+            &quot;url&quot;: &quot;http://localhost:8000/api/v1/posts?page=1&quot;,
+            &quot;label&quot;: &quot;1&quot;,
+            &quot;active&quot;: true
+        },
+        {
+            &quot;url&quot;: &quot;http://localhost:8000/api/v1/posts?page=2&quot;,
+            &quot;label&quot;: &quot;2&quot;,
+            &quot;active&quot;: false
+        },
+        {
+            &quot;url&quot;: &quot;http://localhost:8000/api/v1/posts?page=3&quot;,
+            &quot;label&quot;: &quot;3&quot;,
+            &quot;active&quot;: false
+        },
+        {
+            &quot;url&quot;: &quot;http://localhost:8000/api/v1/posts?page=4&quot;,
+            &quot;label&quot;: &quot;4&quot;,
+            &quot;active&quot;: false
+        },
+        {
+            &quot;url&quot;: &quot;http://localhost:8000/api/v1/posts?page=2&quot;,
+            &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+            &quot;active&quot;: false
+        }
+    ],
+    &quot;next_page_url&quot;: &quot;http://localhost:8000/api/v1/posts?page=2&quot;,
+    &quot;path&quot;: &quot;http://localhost:8000/api/v1/posts&quot;,
+    &quot;per_page&quot;: 10,
+    &quot;prev_page_url&quot;: null,
+    &quot;to&quot;: 10,
+    &quot;total&quot;: 33
 }</code>
  </pre>
     </span>
@@ -786,7 +1275,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-v1-posts" data-method="GET"
       data-path="api/v1/posts"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -817,6 +1306,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-posts"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -843,6 +1343,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="endpoints-POSTapi-v1-posts">POST api/v1/posts</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -854,11 +1355,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost:8000/api/v1/posts" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "title=et"\
-    --form "body=quos"\
-    --form "image=@/tmp/phpSwUtpq" </code></pre></div>
+    --form "title=quam"\
+    --form "body=consequatur"\
+    --form "image=@/tmp/phpiKgaBk" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -867,13 +1369,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
 const body = new FormData();
-body.append('title', 'et');
-body.append('body', 'quos');
+body.append('title', 'quam');
+body.append('body', 'consequatur');
 body.append('image', document.querySelector('input[name="image"]').files[0]);
 
 fetch(url, {
@@ -903,7 +1406,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-v1-posts" data-method="POST"
       data-path="api/v1/posts"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="1"
       data-isarraybody="0"
       autocomplete="off"
@@ -933,6 +1436,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/v1/posts</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-posts"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -965,7 +1479,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Example: <code>/tmp/phpSwUtpq</code></p>
+<p>Must be an image. Example: <code>/tmp/phpiKgaBk</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
@@ -973,10 +1487,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="POSTapi-v1-posts"
-               value="et"
+               value="quam"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>quam</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>body</code></b>&nbsp;&nbsp;
@@ -984,16 +1498,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="body"                data-endpoint="POSTapi-v1-posts"
-               value="quos"
+               value="consequatur"
                data-component="body">
     <br>
-<p>Example: <code>quos</code></p>
+<p>Example: <code>consequatur</code></p>
         </div>
         </form>
 
                     <h2 id="endpoints-GETapi-v1-posts--id-">GET api/v1/posts/{id}</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1005,6 +1520,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
     --get "http://localhost:8000/api/v1/posts/1" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -1015,6 +1531,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -1028,7 +1545,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-v1-posts--id-">
             <blockquote>
-            <p>Example response (500):</p>
+            <p>Example response (200):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -1041,7 +1558,296 @@ access-control-allow-credentials: true
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;message&quot;: &quot;success get post&quot;,
+    &quot;post&quot;: {
+        &quot;id&quot;: 1,
+        &quot;title&quot;: &quot;Enim rem vel voluptas repellat ea.&quot;,
+        &quot;image&quot;: &quot;104585f5c9cc3d21cb264b9c1136bfcb.png&quot;,
+        &quot;user_id&quot;: 6,
+        &quot;created_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;,
+        &quot;likes_count&quot;: 18,
+        &quot;comments_count&quot;: 16,
+        &quot;likes&quot;: [
+            {
+                &quot;id&quot;: 2,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 8,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 3,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 3,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 7,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 6,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 9,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 6,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 12,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 5,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:06.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 21,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 4,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 23,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 2,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 24,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 5,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 28,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 1,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 29,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 7,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 31,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 2,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 41,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 4,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 54,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 10,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 57,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 8,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 59,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 2,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 64,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 4,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 95,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 9,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 98,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 10,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            }
+        ],
+        &quot;comments&quot;: [
+            {
+                &quot;id&quot;: 13,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 6,
+                &quot;comment&quot;: &quot;Odio soluta iste veritatis nesciunt rem veritatis.&quot;,
+                &quot;status&quot;: &quot;pending&quot;,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 14,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 10,
+                &quot;comment&quot;: &quot;Consequatur ad placeat neque iure dolore alias autem doloremque.&quot;,
+                &quot;status&quot;: &quot;rejected&quot;,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 19,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 4,
+                &quot;comment&quot;: &quot;Incidunt quis non qui quia.&quot;,
+                &quot;status&quot;: &quot;rejected&quot;,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 20,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 6,
+                &quot;comment&quot;: &quot;Iusto voluptas facere qui pariatur animi unde.&quot;,
+                &quot;status&quot;: &quot;pending&quot;,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 21,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 9,
+                &quot;comment&quot;: &quot;Expedita placeat sed doloribus sit minus quibusdam.&quot;,
+                &quot;status&quot;: &quot;pending&quot;,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 22,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 9,
+                &quot;comment&quot;: &quot;Quae modi delectus natus similique non rerum nobis.&quot;,
+                &quot;status&quot;: &quot;pending&quot;,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 23,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 4,
+                &quot;comment&quot;: &quot;Recusandae quis animi omnis mollitia.&quot;,
+                &quot;status&quot;: &quot;approved&quot;,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 34,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 8,
+                &quot;comment&quot;: &quot;Quod aliquid eum molestiae illo.&quot;,
+                &quot;status&quot;: &quot;rejected&quot;,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 36,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 6,
+                &quot;comment&quot;: &quot;Cum et dolore et corrupti voluptatibus.&quot;,
+                &quot;status&quot;: &quot;approved&quot;,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 37,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 5,
+                &quot;comment&quot;: &quot;Perspiciatis mollitia quo facilis modi dolorum ad aut.&quot;,
+                &quot;status&quot;: &quot;approved&quot;,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 40,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 10,
+                &quot;comment&quot;: &quot;Ut deleniti est vitae consequatur possimus.&quot;,
+                &quot;status&quot;: &quot;rejected&quot;,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 45,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 4,
+                &quot;comment&quot;: &quot;In saepe non sit ea eum autem neque suscipit.&quot;,
+                &quot;status&quot;: &quot;rejected&quot;,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 46,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 10,
+                &quot;comment&quot;: &quot;Non quis expedita tempora tempora occaecati dolor omnis.&quot;,
+                &quot;status&quot;: &quot;pending&quot;,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 65,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 10,
+                &quot;comment&quot;: &quot;Nulla eaque dolores sint quaerat deleniti alias.&quot;,
+                &quot;status&quot;: &quot;pending&quot;,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 80,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 4,
+                &quot;comment&quot;: &quot;Non minus adipisci at in dolor et repellendus.&quot;,
+                &quot;status&quot;: &quot;rejected&quot;,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            },
+            {
+                &quot;id&quot;: 89,
+                &quot;post_id&quot;: 1,
+                &quot;user_id&quot;: 2,
+                &quot;comment&quot;: &quot;Voluptatem non omnis perferendis non fugiat.&quot;,
+                &quot;status&quot;: &quot;pending&quot;,
+                &quot;created_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2024-10-16T07:53:07.000000Z&quot;
+            }
+        ],
+        &quot;user&quot;: {
+            &quot;id&quot;: 6,
+            &quot;name&quot;: &quot;Dr. D&#039;angelo Haley II&quot;,
+            &quot;username&quot;: &quot;ova54&quot;
+        }
+    }
 }</code>
  </pre>
     </span>
@@ -1062,7 +1868,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-v1-posts--id-" data-method="GET"
       data-path="api/v1/posts/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1092,6 +1898,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/v1/posts/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-posts--id-"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -1131,6 +1948,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="endpoints-PUTapi-v1-posts--id-">PUT api/v1/posts/{id}</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1142,13 +1960,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "http://localhost:8000/api/v1/posts/1" \
-    --header "Content-Type: application/json" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --data "{
-    \"title\": \"sed\",
-    \"body\": \"maxime\"
-}"
-</code></pre></div>
+    --form "title=jjahmma"\
+    --form "body=neque"\
+    --form "image=@/tmp/phpTuovlQ" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -1157,19 +1974,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
-    "Content-Type": "application/json",
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "multipart/form-data",
     "Accept": "application/json",
 };
 
-let body = {
-    "title": "sed",
-    "body": "maxime"
-};
+const body = new FormData();
+body.append('title', 'jjahmma');
+body.append('body', 'neque');
+body.append('image', document.querySelector('input[name="image"]').files[0]);
 
 fetch(url, {
     method: "PUT",
     headers,
-    body: JSON.stringify(body),
+    body,
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
@@ -1193,8 +2011,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-PUTapi-v1-posts--id-" data-method="PUT"
       data-path="api/v1/posts/{id}"
-      data-authed="0"
-      data-hasfiles="0"
+      data-authed="1"
+      data-hasfiles="1"
       data-isarraybody="0"
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-posts--id-', this);">
@@ -1228,15 +2046,26 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-posts--id-"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
                               name="Content-Type"                data-endpoint="PUTapi-v1-posts--id-"
-               value="application/json"
+               value="multipart/form-data"
                data-component="header">
     <br>
-<p>Example: <code>application/json</code></p>
+<p>Example: <code>multipart/form-data</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -1263,32 +2092,178 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="title"                data-endpoint="PUTapi-v1-posts--id-"
-               value="sed"
+            <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="file" style="display: none"
+                              name="image"                data-endpoint="PUTapi-v1-posts--id-"
+               value=""
                data-component="body">
     <br>
-<p>Example: <code>sed</code></p>
+<p>Must be an image. Example: <code>/tmp/phpTuovlQ</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="title"                data-endpoint="PUTapi-v1-posts--id-"
+               value="jjahmma"
+               data-component="body">
+    <br>
+<p>Must not be greater than 100 characters. Example: <code>jjahmma</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>body</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
- &nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="body"                data-endpoint="PUTapi-v1-posts--id-"
-               value="maxime"
+               value="neque"
                data-component="body">
     <br>
-<p>Example: <code>maxime</code></p>
+<p>Example: <code>neque</code></p>
         </div>
         </form>
+
+                    <h2 id="endpoints-DELETEapi-v1-posts--id-">DELETE api/v1/posts/{id}</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-posts--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:8000/api/v1/posts/1" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/posts/1"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-v1-posts--id-">
+</span>
+<span id="execution-results-DELETEapi-v1-posts--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-posts--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-posts--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-posts--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-posts--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-v1-posts--id-" data-method="DELETE"
+      data-path="api/v1/posts/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-posts--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-posts--id-"
+                    onclick="tryItOut('DELETEapi-v1-posts--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-posts--id-"
+                    onclick="cancelTryOut('DELETEapi-v1-posts--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-posts--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/posts/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-v1-posts--id-"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-v1-posts--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-v1-posts--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="DELETEapi-v1-posts--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the post. Example: <code>1</code></p>
+            </div>
+                    </form>
 
                     <h2 id="endpoints-POSTapi-v1-posts--post_id--like">POST api/v1/posts/{post_id}/like</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1300,6 +2275,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost:8000/api/v1/posts/1/like" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -1310,6 +2286,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -1340,7 +2317,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-v1-posts--post_id--like" data-method="POST"
       data-path="api/v1/posts/{post_id}/like"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1370,6 +2347,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/v1/posts/{post_id}/like</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-posts--post_id--like"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -1409,6 +2397,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="endpoints-POSTapi-v1-posts--post_id--comment">POST api/v1/posts/{post_id}/comment</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1420,10 +2409,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost:8000/api/v1/posts/1/comment" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"body\": \"voluptatem\"
+    \"body\": \"dolores\"
 }"
 </code></pre></div>
 
@@ -1434,12 +2424,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "body": "voluptatem"
+    "body": "dolores"
 };
 
 fetch(url, {
@@ -1469,7 +2460,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-v1-posts--post_id--comment" data-method="POST"
       data-path="api/v1/posts/{post_id}/comment"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1499,6 +2490,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/v1/posts/{post_id}/comment</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-posts--post_id--comment"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -1540,16 +2542,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="body"                data-endpoint="POSTapi-v1-posts--post_id--comment"
-               value="voluptatem"
+               value="dolores"
                data-component="body">
     <br>
-<p>Example: <code>voluptatem</code></p>
+<p>Example: <code>dolores</code></p>
         </div>
         </form>
 
                     <h2 id="endpoints-PUTapi-v1-posts--post_id--comment--id-">PUT api/v1/posts/{post_id}/comment/{id}</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1561,10 +2564,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
     "http://localhost:8000/api/v1/posts/1/comment/1" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"body\": \"et\"
+    \"body\": \"non\"
 }"
 </code></pre></div>
 
@@ -1575,12 +2579,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
 );
 
 const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "body": "et"
+    "body": "non"
 };
 
 fetch(url, {
@@ -1610,7 +2615,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-PUTapi-v1-posts--post_id--comment--id-" data-method="PUT"
       data-path="api/v1/posts/{post_id}/comment/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1644,6 +2649,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <b><code>api/v1/posts/{post_id}/comment/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-v1-posts--post_id--comment--id-"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
@@ -1696,10 +2712,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="body"                data-endpoint="PUTapi-v1-posts--post_id--comment--id-"
-               value="et"
+               value="non"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>non</code></p>
         </div>
         </form>
 

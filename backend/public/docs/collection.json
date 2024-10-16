@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "77c3424b-61a5-45c2-8b06-300f41f28899",
+        "_postman_id": "ac78d455-a793-4c92-8516-4bc27b5a2f0e",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"schulist.amparo@example.org\",\"password\":\"dolorem\"}"
+                            "raw": "{\"email\":\"remington.koss@example.net\",\"password\":\"enim\"}"
                         },
                         "description": "",
                         "auth": {
@@ -72,12 +72,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"eo\",\"username\":\"ut\",\"email\":\"pagac.enrique@example.net\",\"password\":\";zC:md\"}"
+                            "raw": "{\"name\":\"cvm\",\"username\":\"ab\",\"email\":\"gwhite@example.net\",\"password\":\"SymOcmU'\"}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -124,8 +121,8 @@
                                     "value": "true"
                                 }
                             ],
-                            "code": 500,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 200,
+                            "body": "{\"authenticated\":true,\"user\":{\"id\":2,\"name\":\"user\",\"username\":\"user\",\"email\":\"user@localhost\",\"email_verified_at\":\"2024-10-16T07:29:56.000000Z\",\"role\":\"user\",\"created_at\":\"2024-10-16T07:29:56.000000Z\",\"updated_at\":\"2024-10-16T07:29:56.000000Z\"},\"token\":\"7|LBVfLK4sBKpmcFF6lmVp6fXJaq2VFoSO0sWnnc47ab525cce\"}",
                             "name": ""
                         }
                     ]
@@ -152,12 +149,68 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"feil.fleta@example.net\",\"password\":\"distinctio\"}"
+                            "raw": "{\"email\":\"nerdman@example.com\",\"password\":\"commodi\"}"
                         },
                         "description": "",
                         "auth": {
                             "type": "noauth"
                         }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api\/v1\/profile",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/profile",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/profile"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"fklq\",\"username\":\"ww\",\"email\":\"jena.crooks@example.com\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api\/v1\/reset-password",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/reset-password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/reset-password"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"password\":\"zjPAr-[\"}"
+                        },
+                        "description": ""
                     },
                     "response": []
                 },
@@ -182,10 +235,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
@@ -207,8 +257,8 @@
                                     "value": "true"
                                 }
                             ],
-                            "code": 500,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 200,
+                            "body": "{\"message\":\"success get all post\",\"current_page\":1,\"data\":[{\"id\":34,\"title\":\"Coba upload api\",\"image\":\"http:\\\/\\\/localhost:8000\\\/storage\\\/posts\\\/2\\\/gQZuD45VXp_default.png\",\"user_id\":2,\"created_at\":\"2024-10-16T09:20:01.000000Z\",\"updated_at\":\"2024-10-16T09:20:01.000000Z\"},{\"id\":33,\"title\":\"hello world\",\"image\":\"http:\\\/\\\/localhost:8000\\\/storage\\\/posts\\\/2\\\/aaRp2bQqOz_default.png\",\"user_id\":2,\"created_at\":\"2024-10-16T08:32:24.000000Z\",\"updated_at\":\"2024-10-16T08:32:24.000000Z\"},{\"id\":31,\"title\":\"bukan coba coba\",\"image\":\"http:\\\/\\\/localhost:8000\\\/storage\\\/posts\\\/1\\\/sh3mzvFY6M_mirip kopeah.jpg\",\"user_id\":2,\"created_at\":\"2024-10-16T08:15:52.000000Z\",\"updated_at\":\"2024-10-16T08:42:43.000000Z\"},{\"id\":1,\"title\":\"Enim rem vel voluptas repellat ea.\",\"image\":\"http:\\\/\\\/localhost:8000\\\/storage\\\/posts\\\/104585f5c9cc3d21cb264b9c1136bfcb.png\",\"user_id\":6,\"created_at\":\"2024-10-16T07:53:06.000000Z\",\"updated_at\":\"2024-10-16T07:53:06.000000Z\"},{\"id\":2,\"title\":\"Mollitia omnis necessitatibus voluptates similique inventore illum enim.\",\"image\":\"http:\\\/\\\/localhost:8000\\\/storage\\\/posts\\\/1\\\/k3Jb9LV9Lf_1705853478249.jpeg\",\"user_id\":4,\"created_at\":\"2024-10-16T07:53:06.000000Z\",\"updated_at\":\"2024-10-16T08:43:01.000000Z\"},{\"id\":3,\"title\":\"Perferendis omnis iusto delectus nisi est quo.\",\"image\":\"http:\\\/\\\/localhost:8000\\\/storage\\\/posts\\\/d39a9170ec0a45932d7f89c4a34fcdeb.png\",\"user_id\":3,\"created_at\":\"2024-10-16T07:53:06.000000Z\",\"updated_at\":\"2024-10-16T07:53:06.000000Z\"},{\"id\":4,\"title\":\"Laudantium vitae officiis fuga velit.\",\"image\":\"http:\\\/\\\/localhost:8000\\\/storage\\\/posts\\\/1\\\/JTSW6RcuIA_Screenshot from 2024-01-22 18-03-34.png\",\"user_id\":6,\"created_at\":\"2024-10-16T07:53:06.000000Z\",\"updated_at\":\"2024-10-16T08:43:23.000000Z\"},{\"id\":5,\"title\":\"Veritatis dolorem iste quae labore quisquam aut.\",\"image\":\"http:\\\/\\\/localhost:8000\\\/storage\\\/posts\\\/1\\\/BeG8YlTxnM_liga-smk-2023-slicing-brawl.png\",\"user_id\":9,\"created_at\":\"2024-10-16T07:53:06.000000Z\",\"updated_at\":\"2024-10-16T08:43:41.000000Z\"},{\"id\":6,\"title\":\"How to train junior developer\",\"image\":\"http:\\\/\\\/localhost:8000\\\/storage\\\/posts\\\/1\\\/Bcn7hRI9nA_1705912910365.jpeg\",\"user_id\":9,\"created_at\":\"2024-10-16T07:53:06.000000Z\",\"updated_at\":\"2024-10-16T08:47:10.000000Z\"},{\"id\":8,\"title\":\"Est consequatur et molestiae a.\",\"image\":\"http:\\\/\\\/localhost:8000\\\/storage\\\/posts\\\/d73d1ca685bfb17a9baf7f6baea6f0f0.png\",\"user_id\":9,\"created_at\":\"2024-10-16T07:53:06.000000Z\",\"updated_at\":\"2024-10-16T07:53:06.000000Z\"}],\"first_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/posts?page=1\",\"from\":1,\"last_page\":4,\"last_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/posts?page=4\",\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/posts?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/posts?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/posts?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/posts?page=4\",\"label\":\"4\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/posts?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"next_page_url\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/posts?page=2\",\"path\":\"http:\\\/\\\/localhost:8000\\\/api\\\/v1\\\/posts\",\"per_page\":10,\"prev_page_url\":null,\"to\":10,\"total\":33}",
                             "name": ""
                         }
                     ]
@@ -238,13 +288,13 @@
                             "formdata": [
                                 {
                                     "key": "title",
-                                    "value": "et",
+                                    "value": "quam",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "body",
-                                    "value": "quos",
+                                    "value": "consequatur",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -255,10 +305,7 @@
                                 }
                             ]
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -291,10 +338,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
@@ -316,8 +360,8 @@
                                     "value": "true"
                                 }
                             ],
-                            "code": 500,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 200,
+                            "body": "{\"message\":\"success get post\",\"post\":{\"id\":1,\"title\":\"Enim rem vel voluptas repellat ea.\",\"image\":\"104585f5c9cc3d21cb264b9c1136bfcb.png\",\"user_id\":6,\"created_at\":\"2024-10-16T07:53:06.000000Z\",\"updated_at\":\"2024-10-16T07:53:06.000000Z\",\"likes_count\":18,\"comments_count\":16,\"likes\":[{\"id\":2,\"post_id\":1,\"user_id\":8,\"created_at\":\"2024-10-16T07:53:06.000000Z\",\"updated_at\":\"2024-10-16T07:53:06.000000Z\"},{\"id\":3,\"post_id\":1,\"user_id\":3,\"created_at\":\"2024-10-16T07:53:06.000000Z\",\"updated_at\":\"2024-10-16T07:53:06.000000Z\"},{\"id\":7,\"post_id\":1,\"user_id\":6,\"created_at\":\"2024-10-16T07:53:06.000000Z\",\"updated_at\":\"2024-10-16T07:53:06.000000Z\"},{\"id\":9,\"post_id\":1,\"user_id\":6,\"created_at\":\"2024-10-16T07:53:06.000000Z\",\"updated_at\":\"2024-10-16T07:53:06.000000Z\"},{\"id\":12,\"post_id\":1,\"user_id\":5,\"created_at\":\"2024-10-16T07:53:06.000000Z\",\"updated_at\":\"2024-10-16T07:53:06.000000Z\"},{\"id\":21,\"post_id\":1,\"user_id\":4,\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":23,\"post_id\":1,\"user_id\":2,\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":24,\"post_id\":1,\"user_id\":5,\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":28,\"post_id\":1,\"user_id\":1,\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":29,\"post_id\":1,\"user_id\":7,\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":31,\"post_id\":1,\"user_id\":2,\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":41,\"post_id\":1,\"user_id\":4,\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":54,\"post_id\":1,\"user_id\":10,\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":57,\"post_id\":1,\"user_id\":8,\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":59,\"post_id\":1,\"user_id\":2,\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":64,\"post_id\":1,\"user_id\":4,\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":95,\"post_id\":1,\"user_id\":9,\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":98,\"post_id\":1,\"user_id\":10,\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"}],\"comments\":[{\"id\":13,\"post_id\":1,\"user_id\":6,\"comment\":\"Odio soluta iste veritatis nesciunt rem veritatis.\",\"status\":\"pending\",\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":14,\"post_id\":1,\"user_id\":10,\"comment\":\"Consequatur ad placeat neque iure dolore alias autem doloremque.\",\"status\":\"rejected\",\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":19,\"post_id\":1,\"user_id\":4,\"comment\":\"Incidunt quis non qui quia.\",\"status\":\"rejected\",\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":20,\"post_id\":1,\"user_id\":6,\"comment\":\"Iusto voluptas facere qui pariatur animi unde.\",\"status\":\"pending\",\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":21,\"post_id\":1,\"user_id\":9,\"comment\":\"Expedita placeat sed doloribus sit minus quibusdam.\",\"status\":\"pending\",\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":22,\"post_id\":1,\"user_id\":9,\"comment\":\"Quae modi delectus natus similique non rerum nobis.\",\"status\":\"pending\",\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":23,\"post_id\":1,\"user_id\":4,\"comment\":\"Recusandae quis animi omnis mollitia.\",\"status\":\"approved\",\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":34,\"post_id\":1,\"user_id\":8,\"comment\":\"Quod aliquid eum molestiae illo.\",\"status\":\"rejected\",\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":36,\"post_id\":1,\"user_id\":6,\"comment\":\"Cum et dolore et corrupti voluptatibus.\",\"status\":\"approved\",\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":37,\"post_id\":1,\"user_id\":5,\"comment\":\"Perspiciatis mollitia quo facilis modi dolorum ad aut.\",\"status\":\"approved\",\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":40,\"post_id\":1,\"user_id\":10,\"comment\":\"Ut deleniti est vitae consequatur possimus.\",\"status\":\"rejected\",\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":45,\"post_id\":1,\"user_id\":4,\"comment\":\"In saepe non sit ea eum autem neque suscipit.\",\"status\":\"rejected\",\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":46,\"post_id\":1,\"user_id\":10,\"comment\":\"Non quis expedita tempora tempora occaecati dolor omnis.\",\"status\":\"pending\",\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":65,\"post_id\":1,\"user_id\":10,\"comment\":\"Nulla eaque dolores sint quaerat deleniti alias.\",\"status\":\"pending\",\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":80,\"post_id\":1,\"user_id\":4,\"comment\":\"Non minus adipisci at in dolor et repellendus.\",\"status\":\"rejected\",\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"},{\"id\":89,\"post_id\":1,\"user_id\":2,\"comment\":\"Voluptatem non omnis perferendis non fugiat.\",\"status\":\"pending\",\"created_at\":\"2024-10-16T07:53:07.000000Z\",\"updated_at\":\"2024-10-16T07:53:07.000000Z\"}],\"user\":{\"id\":6,\"name\":\"Dr. D'angelo Haley II\",\"username\":\"ova54\"}}}",
                             "name": ""
                         }
                     ]
@@ -339,7 +383,66 @@
                                 }
                             ]
                         },
-                        "method": "PUT",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "multipart\/form-data"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "title",
+                                    "value": "jjahmma",
+                                    "type": "text",
+                                    "description": "Must not be greater than 100 characters."
+                                },
+                                {
+                                    "key": "body",
+                                    "value": "neque",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "image",
+                                    "src": [],
+                                    "type": "file"
+                                },
+                                {
+                                    "key": "_method",
+                                    "value": "PUT",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api\/v1\/posts\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/posts\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/posts\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the post."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -350,14 +453,8 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"title\":\"sed\",\"body\":\"maxime\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "body": null,
+                        "description": ""
                     },
                     "response": []
                 },
@@ -390,10 +487,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -427,12 +521,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"body\":\"voluptatem\"}"
+                            "raw": "{\"body\":\"dolores\"}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 },
@@ -472,12 +563,9 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"body\":\"et\"}"
+                            "raw": "{\"body\":\"non\"}"
                         },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": []
                 }
@@ -485,6 +573,12 @@
         }
     ],
     "auth": {
-        "type": "noauth"
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "key",
+                "type": "string"
+            }
+        ]
     }
 }

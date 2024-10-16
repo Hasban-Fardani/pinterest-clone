@@ -57,4 +57,16 @@ class User extends Authenticatable
     {
         return $this->hasMany(PostComment::class);
     }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($user) {
+            // check role is admin, then abort if on production
+            if ($user->role === 'admin' && app()->environment('production')) {
+                abort(403);
+            }
+        });
+    }
 }

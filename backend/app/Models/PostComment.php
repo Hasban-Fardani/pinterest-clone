@@ -12,9 +12,19 @@ class PostComment extends Model
 
     protected $guarded = ['id'];
 
+    public function scopePending(Builder $query)
+    {
+        return $query->where('status', 'pending');
+    }
+
     public function scopeApproved(Builder $query)
     {
         return $query->where('status', 'approved');
+    }
+
+    public function getIsEditedAttribute()
+    {
+        return $this->updated_at !== $this->created_at;
     }
 
     public function post()

@@ -38,9 +38,11 @@ class PostResourceController extends Controller
     public function show(Post $post)
     {
         $post->load(['likes', 'comments', 'user:id,name,username'])
+            ->loadCount(['likes', 'comments'])
             ->whereHas('comments', function ($query) {
                 $query->approved();
             });
+        
         return response()->json([
             'message' => 'success get post',
             'post' => $post,
@@ -50,14 +52,24 @@ class PostResourceController extends Controller
     public function update(Request $request, Post $post, PostService $postService)
     {
         $validator = Validator::make($request->all(), [
-            'title' => 'required|string',
-            'body' => 'required|string',
+            'image' => 'nullable|image',
+            'title' => 'string|max:100',
+            'body' => 'string',
         ]);
 
         $post = $postService->update($post, $validator->validated());
+        
         return response()->json([
             'message' => 'success update post',
             'post' => $post,
+        ]);
+    }
+
+    public function destroy(Post $post, PostService $postService)
+    {
+        $postService->delete($post);
+        return response()->json([
+            'message' => 'success delete post',
         ]);
     }
 }

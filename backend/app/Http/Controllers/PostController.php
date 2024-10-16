@@ -50,13 +50,13 @@ class PostController extends Controller
 
         $postService->update($post, $request->all());
 
-        return redirect()->route('posts.index')->with('success', 'Post ' . $post->title . ' successfully updated.');
+        return redirect()->back()->with('success', 'Post ' . $post->title . ' successfully updated.');
     }
 
     public function destroy(Post $post, PostService $postService)
     {
         $postService->delete($post);
 
-        return redirect()->route('posts.index')->with('success', 'Post ' . $post->title . ' successfully deleted.');
+        return redirect()->back()->with('success', 'Post ' . $post->title . ' successfully deleted.');
     }
 }

@@ -26,7 +26,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: schulist.amparo@example.org
+        example: remington.koss@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -35,14 +35,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: dolorem
+        example: enim
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: schulist.amparo@example.org
-      password: dolorem
+      email: remington.koss@example.net
+      password: enim
     fileParameters: []
     responses: []
     responseFields: []
@@ -62,9 +62,10 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -76,7 +77,7 @@ endpoints:
         name: name
         description: 'Must be between 2 and 100 characters.'
         required: true
-        example: eo
+        example: cvm
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -85,7 +86,7 @@ endpoints:
         name: username
         description: ''
         required: true
-        example: ut
+        example: ab
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -94,7 +95,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 100 characters.'
         required: true
-        example: pagac.enrique@example.net
+        example: gwhite@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -103,20 +104,23 @@ endpoints:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: ';zC:md'
+        example: "SymOcmU'"
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: eo
-      username: ut
-      email: pagac.enrique@example.net
-      password: ';zC:md'
+      name: cvm
+      username: ab
+      email: gwhite@example.net
+      password: "SymOcmU'"
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
     controller: null
     method: null
     route: null
@@ -135,6 +139,7 @@ endpoints:
       authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -146,8 +151,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 500
-        content: '{"message":"Unauthenticated."}'
+        status: 200
+        content: '{"authenticated":true,"user":{"id":2,"name":"user","username":"user","email":"user@localhost","email_verified_at":"2024-10-16T07:29:56.000000Z","role":"user","created_at":"2024-10-16T07:29:56.000000Z","updated_at":"2024-10-16T07:29:56.000000Z"},"token":"7|LBVfLK4sBKpmcFF6lmVp6fXJaq2VFoSO0sWnnc47ab525cce"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -156,7 +161,10 @@ endpoints:
         description: null
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
     controller: null
     method: null
     route: null
@@ -186,7 +194,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: feil.fleta@example.net
+        example: nerdman@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -195,18 +203,126 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: distinctio
+        example: commodi
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: feil.fleta@example.net
-      password: distinctio
+      email: nerdman@example.com
+      password: commodi
     fileParameters: []
     responses: []
     responseFields: []
     auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/v1/profile
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: fklq
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      username:
+        name: username
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: ww
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address. Must not be greater than 255 characters.'
+        required: true
+        example: jena.crooks@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: fklq
+      username: ww
+      email: jena.crooks@example.com
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/v1/reset-password
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      password:
+        name: password
+        description: 'Must be at least 8 characters.'
+        required: true
+        example: 'zjPAr-['
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      password: 'zjPAr-['
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
     controller: null
     method: null
     route: null
@@ -222,9 +338,10 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters: []
@@ -236,8 +353,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 500
-        content: '{"message":"Unauthenticated."}'
+        status: 200
+        content: '{"message":"success get all post","current_page":1,"data":[{"id":34,"title":"Coba upload api","image":"http:\/\/localhost:8000\/storage\/posts\/2\/gQZuD45VXp_default.png","user_id":2,"created_at":"2024-10-16T09:20:01.000000Z","updated_at":"2024-10-16T09:20:01.000000Z"},{"id":33,"title":"hello world","image":"http:\/\/localhost:8000\/storage\/posts\/2\/aaRp2bQqOz_default.png","user_id":2,"created_at":"2024-10-16T08:32:24.000000Z","updated_at":"2024-10-16T08:32:24.000000Z"},{"id":31,"title":"bukan coba coba","image":"http:\/\/localhost:8000\/storage\/posts\/1\/sh3mzvFY6M_mirip kopeah.jpg","user_id":2,"created_at":"2024-10-16T08:15:52.000000Z","updated_at":"2024-10-16T08:42:43.000000Z"},{"id":1,"title":"Enim rem vel voluptas repellat ea.","image":"http:\/\/localhost:8000\/storage\/posts\/104585f5c9cc3d21cb264b9c1136bfcb.png","user_id":6,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"},{"id":2,"title":"Mollitia omnis necessitatibus voluptates similique inventore illum enim.","image":"http:\/\/localhost:8000\/storage\/posts\/1\/k3Jb9LV9Lf_1705853478249.jpeg","user_id":4,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T08:43:01.000000Z"},{"id":3,"title":"Perferendis omnis iusto delectus nisi est quo.","image":"http:\/\/localhost:8000\/storage\/posts\/d39a9170ec0a45932d7f89c4a34fcdeb.png","user_id":3,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"},{"id":4,"title":"Laudantium vitae officiis fuga velit.","image":"http:\/\/localhost:8000\/storage\/posts\/1\/JTSW6RcuIA_Screenshot from 2024-01-22 18-03-34.png","user_id":6,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T08:43:23.000000Z"},{"id":5,"title":"Veritatis dolorem iste quae labore quisquam aut.","image":"http:\/\/localhost:8000\/storage\/posts\/1\/BeG8YlTxnM_liga-smk-2023-slicing-brawl.png","user_id":9,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T08:43:41.000000Z"},{"id":6,"title":"How to train junior developer","image":"http:\/\/localhost:8000\/storage\/posts\/1\/Bcn7hRI9nA_1705912910365.jpeg","user_id":9,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T08:47:10.000000Z"},{"id":8,"title":"Est consequatur et molestiae a.","image":"http:\/\/localhost:8000\/storage\/posts\/d73d1ca685bfb17a9baf7f6baea6f0f0.png","user_id":9,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"}],"first_page_url":"http:\/\/localhost:8000\/api\/v1\/posts?page=1","from":1,"last_page":4,"last_page_url":"http:\/\/localhost:8000\/api\/v1\/posts?page=4","links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost:8000\/api\/v1\/posts?page=1","label":"1","active":true},{"url":"http:\/\/localhost:8000\/api\/v1\/posts?page=2","label":"2","active":false},{"url":"http:\/\/localhost:8000\/api\/v1\/posts?page=3","label":"3","active":false},{"url":"http:\/\/localhost:8000\/api\/v1\/posts?page=4","label":"4","active":false},{"url":"http:\/\/localhost:8000\/api\/v1\/posts?page=2","label":"Next &raquo;","active":false}],"next_page_url":"http:\/\/localhost:8000\/api\/v1\/posts?page=2","path":"http:\/\/localhost:8000\/api\/v1\/posts","per_page":10,"prev_page_url":null,"to":10,"total":33}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -246,7 +363,10 @@ endpoints:
         description: null
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
     controller: null
     method: null
     route: null
@@ -262,9 +382,10 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
@@ -285,7 +406,7 @@ endpoints:
         name: title
         description: ''
         required: true
-        example: et
+        example: quam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -294,19 +415,22 @@ endpoints:
         name: body
         description: ''
         required: true
-        example: quos
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: et
-      body: quos
+      title: quam
+      body: consequatur
     fileParameters:
       image: null
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
     controller: null
     method: null
     route: null
@@ -322,9 +446,10 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -346,8 +471,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 500
-        content: '{"message":"Unauthenticated."}'
+        status: 200
+        content: '{"message":"success get post","post":{"id":1,"title":"Enim rem vel voluptas repellat ea.","image":"104585f5c9cc3d21cb264b9c1136bfcb.png","user_id":6,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z","likes_count":18,"comments_count":16,"likes":[{"id":2,"post_id":1,"user_id":8,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"},{"id":3,"post_id":1,"user_id":3,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"},{"id":7,"post_id":1,"user_id":6,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"},{"id":9,"post_id":1,"user_id":6,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"},{"id":12,"post_id":1,"user_id":5,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"},{"id":21,"post_id":1,"user_id":4,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":23,"post_id":1,"user_id":2,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":24,"post_id":1,"user_id":5,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":28,"post_id":1,"user_id":1,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":29,"post_id":1,"user_id":7,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":31,"post_id":1,"user_id":2,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":41,"post_id":1,"user_id":4,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":54,"post_id":1,"user_id":10,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":57,"post_id":1,"user_id":8,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":59,"post_id":1,"user_id":2,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":64,"post_id":1,"user_id":4,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":95,"post_id":1,"user_id":9,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":98,"post_id":1,"user_id":10,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"}],"comments":[{"id":13,"post_id":1,"user_id":6,"comment":"Odio soluta iste veritatis nesciunt rem veritatis.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":14,"post_id":1,"user_id":10,"comment":"Consequatur ad placeat neque iure dolore alias autem doloremque.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":19,"post_id":1,"user_id":4,"comment":"Incidunt quis non qui quia.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":20,"post_id":1,"user_id":6,"comment":"Iusto voluptas facere qui pariatur animi unde.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":21,"post_id":1,"user_id":9,"comment":"Expedita placeat sed doloribus sit minus quibusdam.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":22,"post_id":1,"user_id":9,"comment":"Quae modi delectus natus similique non rerum nobis.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":23,"post_id":1,"user_id":4,"comment":"Recusandae quis animi omnis mollitia.","status":"approved","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":34,"post_id":1,"user_id":8,"comment":"Quod aliquid eum molestiae illo.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":36,"post_id":1,"user_id":6,"comment":"Cum et dolore et corrupti voluptatibus.","status":"approved","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":37,"post_id":1,"user_id":5,"comment":"Perspiciatis mollitia quo facilis modi dolorum ad aut.","status":"approved","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":40,"post_id":1,"user_id":10,"comment":"Ut deleniti est vitae consequatur possimus.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":45,"post_id":1,"user_id":4,"comment":"In saepe non sit ea eum autem neque suscipit.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":46,"post_id":1,"user_id":10,"comment":"Non quis expedita tempora tempora occaecati dolor omnis.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":65,"post_id":1,"user_id":10,"comment":"Nulla eaque dolores sint quaerat deleniti alias.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":80,"post_id":1,"user_id":4,"comment":"Non minus adipisci at in dolor et repellendus.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":89,"post_id":1,"user_id":2,"comment":"Voluptatem non omnis perferendis non fugiat.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"}],"user":{"id":6,"name":"Dr. D''angelo Haley II","username":"ova54"}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -356,7 +481,10 @@ endpoints:
         description: null
         custom: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
     controller: null
     method: null
     route: null
@@ -373,10 +501,11 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
-      Content-Type: application/json
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters:
       id:
@@ -393,11 +522,20 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
+      image:
+        name: image
+        description: 'Must be an image.'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
       title:
         name: title
-        description: ''
-        required: true
-        example: sed
+        description: 'Must not be greater than 100 characters.'
+        required: false
+        example: jjahmma
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -405,19 +543,67 @@ endpoints:
       body:
         name: body
         description: ''
-        required: true
-        example: maxime
+        required: false
+        example: neque
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: sed
-      body: maxime
+      title: jjahmma
+      body: neque
+    fileParameters:
+      image: null
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/posts/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the post.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
     controller: null
     method: null
     route: null
@@ -433,9 +619,10 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -457,7 +644,10 @@ endpoints:
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
     controller: null
     method: null
     route: null
@@ -473,9 +663,10 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -497,17 +688,20 @@ endpoints:
         name: body
         description: ''
         required: true
-        example: voluptatem
+        example: dolores
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      body: voluptatem
+      body: dolores
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
     controller: null
     method: null
     route: null
@@ -524,9 +718,10 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -558,17 +753,20 @@ endpoints:
         name: body
         description: ''
         required: true
-        example: et
+        example: non
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      body: et
+      body: non
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
     controller: null
     method: null
     route: null

@@ -12,22 +12,20 @@ use Illuminate\Support\Facades\Auth;
  */
 class PostLikeController extends Controller
 {
-    public function store(Request $request, Post $post)
+    public function __invoke(Request $request, Post $post)
     {
-        $post->likes()->create([
-            'user_id' => $request->user()->id
-        ]);
+        $like = $post->likes()->where('user_id', $request->user()->id)->first();
+        if ($like !== null) {
+            $like->delete();
+        } else {
+            $post->likes()->create([
+                'user_id' => $request->user()->id
+            ]);
+        }
 
+        $type = $like === null ? ' like' : ' unlike';
         return response()->json([
-            'message' => 'success like post',
-        ]);
-    }
-
-    public function delete(Post $post)
-    {
-        $post->likes()->where('user_id', Auth::id())->delete();
-        return response()->json([
-            'message' => 'success unlike post',
+            'message' => 'success' . $type . ' post',
         ]);
     }
 }

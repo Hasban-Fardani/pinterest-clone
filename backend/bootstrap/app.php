@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -28,6 +29,12 @@ return Application::configure(basePath: dirname(__DIR__))
             return response()->json([
                 'message' => 'Unauthorized',
             ], 403);
+        });
+
+        $exceptions->render(function (ModelNotFoundException $exception) {
+            return response()->json([
+                'message' => 'Not Found',
+            ], 404);
         });
 
         $exceptions->render(function (Exception $exception) {

@@ -14,10 +14,16 @@ Route::prefix('/v1')->name('api.')->group(function () {
             ->name('user');
         Route::post('logout', Api\Auth\LoginController::class)
             ->name('logout');
+
+        // profile
+        Route::put('profile', Api\Auth\ProfileController::class);
+
+        // password
+        Route::put('reset-password', Api\Auth\ResetPasswordController::class);
         
+        // posts routes
         Route::apiResource('posts', Api\PostResourceController::class);
-        Route::apiResource('posts/{post}/like', Api\PostLikeController::class)
-            ->only(['store', 'delete']);
+        Route::post('posts/{post}/like', Api\PostLikeController::class);
         Route::apiResource('posts/{post}/comment', Api\PostCommentController::class)
             ->except('show');
     });

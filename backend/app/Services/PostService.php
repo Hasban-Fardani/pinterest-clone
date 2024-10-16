@@ -35,6 +35,10 @@ class PostService
 
         if ($paginate) {
             $posts = $posts->paginate($perPage, $columns, 'page', $page);
+            $posts->getCollection()->transform(function ($item) {
+                $item->image = Storage::disk('posts')->url($item->image);
+                return $item;
+            });
         }
         
         return $posts;
@@ -50,7 +54,7 @@ class PostService
 
         $newPost = new Post();
         $newPost->title = $data['title'];
-        $newPost->image = Auth::id() . '/' . $filename;
+        $newPost->image = $filename;
         $newPost->user_id = Auth::id();
         $newPost->save();
 
@@ -59,16 +63,21 @@ class PostService
 
     public function update(Post $post, array $data)
     {
-        // delete current image
-        $this->deleteImage($post);
-
         // store new image if exist
         if (array_key_exists('image', $data)) {
+            // delete current image
+            $this->deleteImage($post);
             $filename = $this->storeImage($data);
             $post->image = $filename;
         }
 
-        $post->title = $data['title'];
+        if (array_key_exists('title', $data)) {
+            $post->title = $data['title'];
+        }
+        
+        if (array_key_exists('body', $data)) {
+            $post->body = $data['body'];
+        }
         $post->save();
 
         return $post;

@@ -26,11 +26,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: schulist.amparo@example.org
+                  example: remington.koss@example.net
                 password:
                   type: string
                   description: ''
-                  example: dolorem
+                  example: enim
               required:
                 - email
                 - password
@@ -54,25 +54,24 @@ paths:
                 name:
                   type: string
                   description: 'Must be between 2 and 100 characters.'
-                  example: eo
+                  example: cvm
                 username:
                   type: string
                   description: ''
-                  example: ut
+                  example: ab
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 100 characters.'
-                  example: pagac.enrique@example.net
+                  example: gwhite@example.net
                 password:
                   type: string
                   description: 'Must be at least 6 characters.'
-                  example: ';zC:md'
+                  example: "SymOcmU'"
               required:
                 - name
                 - username
                 - email
                 - password
-      security: []
   /api/v1/user:
     get:
       summary: ''
@@ -80,18 +79,58 @@ paths:
       description: ''
       parameters: []
       responses:
-        500:
+        200:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: Unauthenticated.
+                  authenticated: true
+                  user:
+                    id: 2
+                    name: user
+                    username: user
+                    email: user@localhost
+                    email_verified_at: '2024-10-16T07:29:56.000000Z'
+                    role: user
+                    created_at: '2024-10-16T07:29:56.000000Z'
+                    updated_at: '2024-10-16T07:29:56.000000Z'
+                  token: 7|LBVfLK4sBKpmcFF6lmVp6fXJaq2VFoSO0sWnnc47ab525cce
                 properties:
-                  message:
+                  authenticated:
+                    type: boolean
+                    example: true
+                  user:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 2
+                      name:
+                        type: string
+                        example: user
+                      username:
+                        type: string
+                        example: user
+                      email:
+                        type: string
+                        example: user@localhost
+                      email_verified_at:
+                        type: string
+                        example: '2024-10-16T07:29:56.000000Z'
+                      role:
+                        type: string
+                        example: user
+                      created_at:
+                        type: string
+                        example: '2024-10-16T07:29:56.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2024-10-16T07:29:56.000000Z'
+                  token:
                     type: string
-                    example: Unauthenticated.
+                    example: 7|LBVfLK4sBKpmcFF6lmVp6fXJaq2VFoSO0sWnnc47ab525cce
       tags:
         - Endpoints
   /api/v1/logout:
@@ -113,15 +152,69 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: feil.fleta@example.net
+                  example: nerdman@example.com
                 password:
                   type: string
                   description: ''
-                  example: distinctio
+                  example: commodi
               required:
                 - email
                 - password
       security: []
+  /api/v1/profile:
+    put:
+      summary: ''
+      operationId: putApiV1Profile
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: fklq
+                username:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: ww
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: jena.crooks@example.com
+              required:
+                - name
+                - username
+                - email
+  /api/v1/reset-password:
+    put:
+      summary: ''
+      operationId: putApiV1ResetPassword
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  description: 'Must be at least 8 characters.'
+                  example: 'zjPAr-['
+              required:
+                - password
   /api/v1/posts:
     get:
       summary: ''
@@ -129,21 +222,293 @@ paths:
       description: ''
       parameters: []
       responses:
-        500:
+        200:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: Unauthenticated.
+                  message: 'success get all post'
+                  current_page: 1
+                  data:
+                    -
+                      id: 34
+                      title: 'Coba upload api'
+                      image: 'http://localhost:8000/storage/posts/2/gQZuD45VXp_default.png'
+                      user_id: 2
+                      created_at: '2024-10-16T09:20:01.000000Z'
+                      updated_at: '2024-10-16T09:20:01.000000Z'
+                    -
+                      id: 33
+                      title: 'hello world'
+                      image: 'http://localhost:8000/storage/posts/2/aaRp2bQqOz_default.png'
+                      user_id: 2
+                      created_at: '2024-10-16T08:32:24.000000Z'
+                      updated_at: '2024-10-16T08:32:24.000000Z'
+                    -
+                      id: 31
+                      title: 'bukan coba coba'
+                      image: 'http://localhost:8000/storage/posts/1/sh3mzvFY6M_mirip kopeah.jpg'
+                      user_id: 2
+                      created_at: '2024-10-16T08:15:52.000000Z'
+                      updated_at: '2024-10-16T08:42:43.000000Z'
+                    -
+                      id: 1
+                      title: 'Enim rem vel voluptas repellat ea.'
+                      image: 'http://localhost:8000/storage/posts/104585f5c9cc3d21cb264b9c1136bfcb.png'
+                      user_id: 6
+                      created_at: '2024-10-16T07:53:06.000000Z'
+                      updated_at: '2024-10-16T07:53:06.000000Z'
+                    -
+                      id: 2
+                      title: 'Mollitia omnis necessitatibus voluptates similique inventore illum enim.'
+                      image: 'http://localhost:8000/storage/posts/1/k3Jb9LV9Lf_1705853478249.jpeg'
+                      user_id: 4
+                      created_at: '2024-10-16T07:53:06.000000Z'
+                      updated_at: '2024-10-16T08:43:01.000000Z'
+                    -
+                      id: 3
+                      title: 'Perferendis omnis iusto delectus nisi est quo.'
+                      image: 'http://localhost:8000/storage/posts/d39a9170ec0a45932d7f89c4a34fcdeb.png'
+                      user_id: 3
+                      created_at: '2024-10-16T07:53:06.000000Z'
+                      updated_at: '2024-10-16T07:53:06.000000Z'
+                    -
+                      id: 4
+                      title: 'Laudantium vitae officiis fuga velit.'
+                      image: 'http://localhost:8000/storage/posts/1/JTSW6RcuIA_Screenshot from 2024-01-22 18-03-34.png'
+                      user_id: 6
+                      created_at: '2024-10-16T07:53:06.000000Z'
+                      updated_at: '2024-10-16T08:43:23.000000Z'
+                    -
+                      id: 5
+                      title: 'Veritatis dolorem iste quae labore quisquam aut.'
+                      image: 'http://localhost:8000/storage/posts/1/BeG8YlTxnM_liga-smk-2023-slicing-brawl.png'
+                      user_id: 9
+                      created_at: '2024-10-16T07:53:06.000000Z'
+                      updated_at: '2024-10-16T08:43:41.000000Z'
+                    -
+                      id: 6
+                      title: 'How to train junior developer'
+                      image: 'http://localhost:8000/storage/posts/1/Bcn7hRI9nA_1705912910365.jpeg'
+                      user_id: 9
+                      created_at: '2024-10-16T07:53:06.000000Z'
+                      updated_at: '2024-10-16T08:47:10.000000Z'
+                    -
+                      id: 8
+                      title: 'Est consequatur et molestiae a.'
+                      image: 'http://localhost:8000/storage/posts/d73d1ca685bfb17a9baf7f6baea6f0f0.png'
+                      user_id: 9
+                      created_at: '2024-10-16T07:53:06.000000Z'
+                      updated_at: '2024-10-16T07:53:06.000000Z'
+                  first_page_url: 'http://localhost:8000/api/v1/posts?page=1'
+                  from: 1
+                  last_page: 4
+                  last_page_url: 'http://localhost:8000/api/v1/posts?page=4'
+                  links:
+                    -
+                      url: null
+                      label: '&laquo; Previous'
+                      active: false
+                    -
+                      url: 'http://localhost:8000/api/v1/posts?page=1'
+                      label: '1'
+                      active: true
+                    -
+                      url: 'http://localhost:8000/api/v1/posts?page=2'
+                      label: '2'
+                      active: false
+                    -
+                      url: 'http://localhost:8000/api/v1/posts?page=3'
+                      label: '3'
+                      active: false
+                    -
+                      url: 'http://localhost:8000/api/v1/posts?page=4'
+                      label: '4'
+                      active: false
+                    -
+                      url: 'http://localhost:8000/api/v1/posts?page=2'
+                      label: 'Next &raquo;'
+                      active: false
+                  next_page_url: 'http://localhost:8000/api/v1/posts?page=2'
+                  path: 'http://localhost:8000/api/v1/posts'
+                  per_page: 10
+                  prev_page_url: null
+                  to: 10
+                  total: 33
                 properties:
                   message:
                     type: string
-                    example: Unauthenticated.
+                    example: 'success get all post'
+                  current_page:
+                    type: integer
+                    example: 1
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 34
+                        title: 'Coba upload api'
+                        image: 'http://localhost:8000/storage/posts/2/gQZuD45VXp_default.png'
+                        user_id: 2
+                        created_at: '2024-10-16T09:20:01.000000Z'
+                        updated_at: '2024-10-16T09:20:01.000000Z'
+                      -
+                        id: 33
+                        title: 'hello world'
+                        image: 'http://localhost:8000/storage/posts/2/aaRp2bQqOz_default.png'
+                        user_id: 2
+                        created_at: '2024-10-16T08:32:24.000000Z'
+                        updated_at: '2024-10-16T08:32:24.000000Z'
+                      -
+                        id: 31
+                        title: 'bukan coba coba'
+                        image: 'http://localhost:8000/storage/posts/1/sh3mzvFY6M_mirip kopeah.jpg'
+                        user_id: 2
+                        created_at: '2024-10-16T08:15:52.000000Z'
+                        updated_at: '2024-10-16T08:42:43.000000Z'
+                      -
+                        id: 1
+                        title: 'Enim rem vel voluptas repellat ea.'
+                        image: 'http://localhost:8000/storage/posts/104585f5c9cc3d21cb264b9c1136bfcb.png'
+                        user_id: 6
+                        created_at: '2024-10-16T07:53:06.000000Z'
+                        updated_at: '2024-10-16T07:53:06.000000Z'
+                      -
+                        id: 2
+                        title: 'Mollitia omnis necessitatibus voluptates similique inventore illum enim.'
+                        image: 'http://localhost:8000/storage/posts/1/k3Jb9LV9Lf_1705853478249.jpeg'
+                        user_id: 4
+                        created_at: '2024-10-16T07:53:06.000000Z'
+                        updated_at: '2024-10-16T08:43:01.000000Z'
+                      -
+                        id: 3
+                        title: 'Perferendis omnis iusto delectus nisi est quo.'
+                        image: 'http://localhost:8000/storage/posts/d39a9170ec0a45932d7f89c4a34fcdeb.png'
+                        user_id: 3
+                        created_at: '2024-10-16T07:53:06.000000Z'
+                        updated_at: '2024-10-16T07:53:06.000000Z'
+                      -
+                        id: 4
+                        title: 'Laudantium vitae officiis fuga velit.'
+                        image: 'http://localhost:8000/storage/posts/1/JTSW6RcuIA_Screenshot from 2024-01-22 18-03-34.png'
+                        user_id: 6
+                        created_at: '2024-10-16T07:53:06.000000Z'
+                        updated_at: '2024-10-16T08:43:23.000000Z'
+                      -
+                        id: 5
+                        title: 'Veritatis dolorem iste quae labore quisquam aut.'
+                        image: 'http://localhost:8000/storage/posts/1/BeG8YlTxnM_liga-smk-2023-slicing-brawl.png'
+                        user_id: 9
+                        created_at: '2024-10-16T07:53:06.000000Z'
+                        updated_at: '2024-10-16T08:43:41.000000Z'
+                      -
+                        id: 6
+                        title: 'How to train junior developer'
+                        image: 'http://localhost:8000/storage/posts/1/Bcn7hRI9nA_1705912910365.jpeg'
+                        user_id: 9
+                        created_at: '2024-10-16T07:53:06.000000Z'
+                        updated_at: '2024-10-16T08:47:10.000000Z'
+                      -
+                        id: 8
+                        title: 'Est consequatur et molestiae a.'
+                        image: 'http://localhost:8000/storage/posts/d73d1ca685bfb17a9baf7f6baea6f0f0.png'
+                        user_id: 9
+                        created_at: '2024-10-16T07:53:06.000000Z'
+                        updated_at: '2024-10-16T07:53:06.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 34
+                        title:
+                          type: string
+                          example: 'Coba upload api'
+                        image:
+                          type: string
+                          example: 'http://localhost:8000/storage/posts/2/gQZuD45VXp_default.png'
+                        user_id:
+                          type: integer
+                          example: 2
+                        created_at:
+                          type: string
+                          example: '2024-10-16T09:20:01.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2024-10-16T09:20:01.000000Z'
+                  first_page_url:
+                    type: string
+                    example: 'http://localhost:8000/api/v1/posts?page=1'
+                  from:
+                    type: integer
+                    example: 1
+                  last_page:
+                    type: integer
+                    example: 4
+                  last_page_url:
+                    type: string
+                    example: 'http://localhost:8000/api/v1/posts?page=4'
+                  links:
+                    type: array
+                    example:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/v1/posts?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'http://localhost:8000/api/v1/posts?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/v1/posts?page=3'
+                        label: '3'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/v1/posts?page=4'
+                        label: '4'
+                        active: false
+                      -
+                        url: 'http://localhost:8000/api/v1/posts?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    items:
+                      type: object
+                      properties:
+                        url:
+                          type: string
+                          example: null
+                        label:
+                          type: string
+                          example: '&laquo; Previous'
+                        active:
+                          type: boolean
+                          example: false
+                  next_page_url:
+                    type: string
+                    example: 'http://localhost:8000/api/v1/posts?page=2'
+                  path:
+                    type: string
+                    example: 'http://localhost:8000/api/v1/posts'
+                  per_page:
+                    type: integer
+                    example: 10
+                  prev_page_url:
+                    type: string
+                    example: null
+                  to:
+                    type: integer
+                    example: 10
+                  total:
+                    type: integer
+                    example: 33
       tags:
         - Endpoints
-      security: []
     post:
       summary: ''
       operationId: postApiV1Posts
@@ -166,16 +531,15 @@ paths:
                 title:
                   type: string
                   description: ''
-                  example: et
+                  example: quam
                 body:
                   type: string
                   description: ''
-                  example: quos
+                  example: consequatur
               required:
                 - image
                 - title
                 - body
-      security: []
   '/api/v1/posts/{id}':
     get:
       summary: ''
@@ -183,21 +547,594 @@ paths:
       description: ''
       parameters: []
       responses:
-        500:
+        200:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: Unauthenticated.
+                  message: 'success get post'
+                  post:
+                    id: 1
+                    title: 'Enim rem vel voluptas repellat ea.'
+                    image: 104585f5c9cc3d21cb264b9c1136bfcb.png
+                    user_id: 6
+                    created_at: '2024-10-16T07:53:06.000000Z'
+                    updated_at: '2024-10-16T07:53:06.000000Z'
+                    likes_count: 18
+                    comments_count: 16
+                    likes:
+                      -
+                        id: 2
+                        post_id: 1
+                        user_id: 8
+                        created_at: '2024-10-16T07:53:06.000000Z'
+                        updated_at: '2024-10-16T07:53:06.000000Z'
+                      -
+                        id: 3
+                        post_id: 1
+                        user_id: 3
+                        created_at: '2024-10-16T07:53:06.000000Z'
+                        updated_at: '2024-10-16T07:53:06.000000Z'
+                      -
+                        id: 7
+                        post_id: 1
+                        user_id: 6
+                        created_at: '2024-10-16T07:53:06.000000Z'
+                        updated_at: '2024-10-16T07:53:06.000000Z'
+                      -
+                        id: 9
+                        post_id: 1
+                        user_id: 6
+                        created_at: '2024-10-16T07:53:06.000000Z'
+                        updated_at: '2024-10-16T07:53:06.000000Z'
+                      -
+                        id: 12
+                        post_id: 1
+                        user_id: 5
+                        created_at: '2024-10-16T07:53:06.000000Z'
+                        updated_at: '2024-10-16T07:53:06.000000Z'
+                      -
+                        id: 21
+                        post_id: 1
+                        user_id: 4
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 23
+                        post_id: 1
+                        user_id: 2
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 24
+                        post_id: 1
+                        user_id: 5
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 28
+                        post_id: 1
+                        user_id: 1
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 29
+                        post_id: 1
+                        user_id: 7
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 31
+                        post_id: 1
+                        user_id: 2
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 41
+                        post_id: 1
+                        user_id: 4
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 54
+                        post_id: 1
+                        user_id: 10
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 57
+                        post_id: 1
+                        user_id: 8
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 59
+                        post_id: 1
+                        user_id: 2
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 64
+                        post_id: 1
+                        user_id: 4
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 95
+                        post_id: 1
+                        user_id: 9
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 98
+                        post_id: 1
+                        user_id: 10
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                    comments:
+                      -
+                        id: 13
+                        post_id: 1
+                        user_id: 6
+                        comment: 'Odio soluta iste veritatis nesciunt rem veritatis.'
+                        status: pending
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 14
+                        post_id: 1
+                        user_id: 10
+                        comment: 'Consequatur ad placeat neque iure dolore alias autem doloremque.'
+                        status: rejected
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 19
+                        post_id: 1
+                        user_id: 4
+                        comment: 'Incidunt quis non qui quia.'
+                        status: rejected
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 20
+                        post_id: 1
+                        user_id: 6
+                        comment: 'Iusto voluptas facere qui pariatur animi unde.'
+                        status: pending
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 21
+                        post_id: 1
+                        user_id: 9
+                        comment: 'Expedita placeat sed doloribus sit minus quibusdam.'
+                        status: pending
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 22
+                        post_id: 1
+                        user_id: 9
+                        comment: 'Quae modi delectus natus similique non rerum nobis.'
+                        status: pending
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 23
+                        post_id: 1
+                        user_id: 4
+                        comment: 'Recusandae quis animi omnis mollitia.'
+                        status: approved
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 34
+                        post_id: 1
+                        user_id: 8
+                        comment: 'Quod aliquid eum molestiae illo.'
+                        status: rejected
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 36
+                        post_id: 1
+                        user_id: 6
+                        comment: 'Cum et dolore et corrupti voluptatibus.'
+                        status: approved
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 37
+                        post_id: 1
+                        user_id: 5
+                        comment: 'Perspiciatis mollitia quo facilis modi dolorum ad aut.'
+                        status: approved
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 40
+                        post_id: 1
+                        user_id: 10
+                        comment: 'Ut deleniti est vitae consequatur possimus.'
+                        status: rejected
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 45
+                        post_id: 1
+                        user_id: 4
+                        comment: 'In saepe non sit ea eum autem neque suscipit.'
+                        status: rejected
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 46
+                        post_id: 1
+                        user_id: 10
+                        comment: 'Non quis expedita tempora tempora occaecati dolor omnis.'
+                        status: pending
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 65
+                        post_id: 1
+                        user_id: 10
+                        comment: 'Nulla eaque dolores sint quaerat deleniti alias.'
+                        status: pending
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 80
+                        post_id: 1
+                        user_id: 4
+                        comment: 'Non minus adipisci at in dolor et repellendus.'
+                        status: rejected
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                      -
+                        id: 89
+                        post_id: 1
+                        user_id: 2
+                        comment: 'Voluptatem non omnis perferendis non fugiat.'
+                        status: pending
+                        created_at: '2024-10-16T07:53:07.000000Z'
+                        updated_at: '2024-10-16T07:53:07.000000Z'
+                    user:
+                      id: 6
+                      name: "Dr. D'angelo Haley II"
+                      username: ova54
                 properties:
                   message:
                     type: string
-                    example: Unauthenticated.
+                    example: 'success get post'
+                  post:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      title:
+                        type: string
+                        example: 'Enim rem vel voluptas repellat ea.'
+                      image:
+                        type: string
+                        example: 104585f5c9cc3d21cb264b9c1136bfcb.png
+                      user_id:
+                        type: integer
+                        example: 6
+                      created_at:
+                        type: string
+                        example: '2024-10-16T07:53:06.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2024-10-16T07:53:06.000000Z'
+                      likes_count:
+                        type: integer
+                        example: 18
+                      comments_count:
+                        type: integer
+                        example: 16
+                      likes:
+                        type: array
+                        example:
+                          -
+                            id: 2
+                            post_id: 1
+                            user_id: 8
+                            created_at: '2024-10-16T07:53:06.000000Z'
+                            updated_at: '2024-10-16T07:53:06.000000Z'
+                          -
+                            id: 3
+                            post_id: 1
+                            user_id: 3
+                            created_at: '2024-10-16T07:53:06.000000Z'
+                            updated_at: '2024-10-16T07:53:06.000000Z'
+                          -
+                            id: 7
+                            post_id: 1
+                            user_id: 6
+                            created_at: '2024-10-16T07:53:06.000000Z'
+                            updated_at: '2024-10-16T07:53:06.000000Z'
+                          -
+                            id: 9
+                            post_id: 1
+                            user_id: 6
+                            created_at: '2024-10-16T07:53:06.000000Z'
+                            updated_at: '2024-10-16T07:53:06.000000Z'
+                          -
+                            id: 12
+                            post_id: 1
+                            user_id: 5
+                            created_at: '2024-10-16T07:53:06.000000Z'
+                            updated_at: '2024-10-16T07:53:06.000000Z'
+                          -
+                            id: 21
+                            post_id: 1
+                            user_id: 4
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 23
+                            post_id: 1
+                            user_id: 2
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 24
+                            post_id: 1
+                            user_id: 5
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 28
+                            post_id: 1
+                            user_id: 1
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 29
+                            post_id: 1
+                            user_id: 7
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 31
+                            post_id: 1
+                            user_id: 2
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 41
+                            post_id: 1
+                            user_id: 4
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 54
+                            post_id: 1
+                            user_id: 10
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 57
+                            post_id: 1
+                            user_id: 8
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 59
+                            post_id: 1
+                            user_id: 2
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 64
+                            post_id: 1
+                            user_id: 4
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 95
+                            post_id: 1
+                            user_id: 9
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 98
+                            post_id: 1
+                            user_id: 10
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 2
+                            post_id:
+                              type: integer
+                              example: 1
+                            user_id:
+                              type: integer
+                              example: 8
+                            created_at:
+                              type: string
+                              example: '2024-10-16T07:53:06.000000Z'
+                            updated_at:
+                              type: string
+                              example: '2024-10-16T07:53:06.000000Z'
+                      comments:
+                        type: array
+                        example:
+                          -
+                            id: 13
+                            post_id: 1
+                            user_id: 6
+                            comment: 'Odio soluta iste veritatis nesciunt rem veritatis.'
+                            status: pending
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 14
+                            post_id: 1
+                            user_id: 10
+                            comment: 'Consequatur ad placeat neque iure dolore alias autem doloremque.'
+                            status: rejected
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 19
+                            post_id: 1
+                            user_id: 4
+                            comment: 'Incidunt quis non qui quia.'
+                            status: rejected
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 20
+                            post_id: 1
+                            user_id: 6
+                            comment: 'Iusto voluptas facere qui pariatur animi unde.'
+                            status: pending
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 21
+                            post_id: 1
+                            user_id: 9
+                            comment: 'Expedita placeat sed doloribus sit minus quibusdam.'
+                            status: pending
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 22
+                            post_id: 1
+                            user_id: 9
+                            comment: 'Quae modi delectus natus similique non rerum nobis.'
+                            status: pending
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 23
+                            post_id: 1
+                            user_id: 4
+                            comment: 'Recusandae quis animi omnis mollitia.'
+                            status: approved
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 34
+                            post_id: 1
+                            user_id: 8
+                            comment: 'Quod aliquid eum molestiae illo.'
+                            status: rejected
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 36
+                            post_id: 1
+                            user_id: 6
+                            comment: 'Cum et dolore et corrupti voluptatibus.'
+                            status: approved
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 37
+                            post_id: 1
+                            user_id: 5
+                            comment: 'Perspiciatis mollitia quo facilis modi dolorum ad aut.'
+                            status: approved
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 40
+                            post_id: 1
+                            user_id: 10
+                            comment: 'Ut deleniti est vitae consequatur possimus.'
+                            status: rejected
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 45
+                            post_id: 1
+                            user_id: 4
+                            comment: 'In saepe non sit ea eum autem neque suscipit.'
+                            status: rejected
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 46
+                            post_id: 1
+                            user_id: 10
+                            comment: 'Non quis expedita tempora tempora occaecati dolor omnis.'
+                            status: pending
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 65
+                            post_id: 1
+                            user_id: 10
+                            comment: 'Nulla eaque dolores sint quaerat deleniti alias.'
+                            status: pending
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 80
+                            post_id: 1
+                            user_id: 4
+                            comment: 'Non minus adipisci at in dolor et repellendus.'
+                            status: rejected
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                          -
+                            id: 89
+                            post_id: 1
+                            user_id: 2
+                            comment: 'Voluptatem non omnis perferendis non fugiat.'
+                            status: pending
+                            created_at: '2024-10-16T07:53:07.000000Z'
+                            updated_at: '2024-10-16T07:53:07.000000Z'
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 13
+                            post_id:
+                              type: integer
+                              example: 1
+                            user_id:
+                              type: integer
+                              example: 6
+                            comment:
+                              type: string
+                              example: 'Odio soluta iste veritatis nesciunt rem veritatis.'
+                            status:
+                              type: string
+                              example: pending
+                            created_at:
+                              type: string
+                              example: '2024-10-16T07:53:07.000000Z'
+                            updated_at:
+                              type: string
+                              example: '2024-10-16T07:53:07.000000Z'
+                      user:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            example: 6
+                          name:
+                            type: string
+                            example: "Dr. D'angelo Haley II"
+                          username:
+                            type: string
+                            example: ova54
       tags:
         - Endpoints
-      security: []
     put:
       summary: ''
       operationId: putApiV1PostsId
@@ -207,24 +1144,32 @@ paths:
       tags:
         - Endpoints
       requestBody:
-        required: true
+        required: false
         content:
-          application/json:
+          multipart/form-data:
             schema:
               type: object
               properties:
+                image:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
                 title:
                   type: string
-                  description: ''
-                  example: sed
+                  description: 'Must not be greater than 100 characters.'
+                  example: jjahmma
                 body:
                   type: string
                   description: ''
-                  example: maxime
-              required:
-                - title
-                - body
-      security: []
+                  example: neque
+    delete:
+      summary: ''
+      operationId: deleteApiV1PostsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
     parameters:
       -
         in: path
@@ -243,7 +1188,6 @@ paths:
       responses: {  }
       tags:
         - Endpoints
-      security: []
     parameters:
       -
         in: path
@@ -272,10 +1216,9 @@ paths:
                 body:
                   type: string
                   description: ''
-                  example: voluptatem
+                  example: dolores
               required:
                 - body
-      security: []
     parameters:
       -
         in: path
@@ -304,10 +1247,9 @@ paths:
                 body:
                   type: string
                   description: ''
-                  example: et
+                  example: non
               required:
                 - body
-      security: []
     parameters:
       -
         in: path
@@ -329,3 +1271,12 @@ tags:
   -
     name: Endpoints
     description: ''
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: 'You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.'
+security:
+  -
+    default: []
