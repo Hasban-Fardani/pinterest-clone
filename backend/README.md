@@ -45,6 +45,8 @@ npm run dev
 ```bash
 php artisan serve
 ```
+## API Documentation
+you can visit to this [link](https://hasban-fardani.github.io/pinterest-clone/backend/public/docs/)
 
 ## Libraries
 - [Laravel 11.x](https://laravel.com/docs/11.x)
