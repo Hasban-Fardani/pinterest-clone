@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 /**
  * Check if user is authenticated
+ * 
+ * @authenticated
  */
 class LoginCheckController extends Controller
 {

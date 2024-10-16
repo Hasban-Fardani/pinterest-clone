@@ -26,11 +26,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: katheryn.monahan@example.net
+                  example: schulist.amparo@example.org
                 password:
                   type: string
                   description: ''
-                  example: quibusdam
+                  example: dolorem
               required:
                 - email
                 - password
@@ -51,15 +51,25 @@ paths:
             schema:
               type: object
               properties:
-                email:
+                name:
                   type: string
-                  description: 'Must be a valid email address.'
-                  example: gutmann.greta@example.net
-                password:
+                  description: 'Must be between 2 and 100 characters.'
+                  example: eo
+                username:
                   type: string
                   description: ''
-                  example: alias
+                  example: ut
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 100 characters.'
+                  example: pagac.enrique@example.net
+                password:
+                  type: string
+                  description: 'Must be at least 6 characters.'
+                  example: ';zC:md'
               required:
+                - name
+                - username
                 - email
                 - password
       security: []
@@ -77,14 +87,13 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'Server Error'
+                  message: Unauthenticated.
                 properties:
                   message:
                     type: string
-                    example: 'Server Error'
+                    example: Unauthenticated.
       tags:
         - Endpoints
-      security: []
   /api/v1/logout:
     post:
       summary: ''
@@ -104,11 +113,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: olehner@example.org
+                  example: feil.fleta@example.net
                 password:
                   type: string
                   description: ''
-                  example: sed
+                  example: distinctio
               required:
                 - email
                 - password
@@ -127,11 +136,11 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'Server Error'
+                  message: Unauthenticated.
                 properties:
                   message:
                     type: string
-                    example: 'Server Error'
+                    example: Unauthenticated.
       tags:
         - Endpoints
       security: []
@@ -143,11 +152,34 @@ paths:
       responses: {  }
       tags:
         - Endpoints
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+                  description: 'Must be an image.'
+                title:
+                  type: string
+                  description: ''
+                  example: et
+                body:
+                  type: string
+                  description: ''
+                  example: quos
+              required:
+                - image
+                - title
+                - body
       security: []
-  '/api/v1/posts/{post}':
+  '/api/v1/posts/{id}':
     get:
       summary: ''
-      operationId: getApiV1PostsPost
+      operationId: getApiV1PostsId
       description: ''
       parameters: []
       responses:
@@ -158,27 +190,54 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'Server Error'
+                  message: Unauthenticated.
                 properties:
                   message:
                     type: string
-                    example: 'Server Error'
+                    example: Unauthenticated.
       tags:
         - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV1PostsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: sed
+                body:
+                  type: string
+                  description: ''
+                  example: maxime
+              required:
+                - title
+                - body
       security: []
     parameters:
       -
         in: path
-        name: post
-        description: 'The post.'
-        example: reprehenderit
+        name: id
+        description: 'The ID of the post.'
+        example: 1
         required: true
         schema:
-          type: string
-  '/api/v1/posts/{post}/like':
+          type: integer
+  '/api/v1/posts/{post_id}/like':
     post:
       summary: ''
-      operationId: postApiV1PostsPostLike
+      operationId: postApiV1PostsPost_idLike
       description: ''
       parameters: []
       responses: {  }
@@ -188,31 +247,84 @@ paths:
     parameters:
       -
         in: path
-        name: post
-        description: 'The post.'
-        example: asperiores
+        name: post_id
+        description: 'The ID of the post.'
+        example: 1
         required: true
         schema:
-          type: string
-  '/api/v1/posts/{post}/comment':
+          type: integer
+  '/api/v1/posts/{post_id}/comment':
     post:
       summary: ''
-      operationId: postApiV1PostsPostComment
+      operationId: postApiV1PostsPost_idComment
       description: ''
       parameters: []
       responses: {  }
       tags:
         - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                body:
+                  type: string
+                  description: ''
+                  example: voluptatem
+              required:
+                - body
       security: []
     parameters:
       -
         in: path
-        name: post
-        description: 'The post.'
-        example: eum
+        name: post_id
+        description: 'The ID of the post.'
+        example: 1
         required: true
         schema:
-          type: string
+          type: integer
+  '/api/v1/posts/{post_id}/comment/{id}':
+    put:
+      summary: ''
+      operationId: putApiV1PostsPost_idCommentId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                body:
+                  type: string
+                  description: ''
+                  example: et
+              required:
+                - body
+      security: []
+    parameters:
+      -
+        in: path
+        name: post_id
+        description: 'The ID of the post.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: id
+        description: 'The ID of the comment.'
+        example: 1
+        required: true
+        schema:
+          type: integer
 tags:
   -
     name: Endpoints

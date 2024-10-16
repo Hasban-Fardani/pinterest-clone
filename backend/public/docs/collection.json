@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "eb055c9e-9646-4ab5-a829-1315113ff7e9",
+        "_postman_id": "77c3424b-61a5-45c2-8b06-300f41f28899",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"katheryn.monahan@example.net\",\"password\":\"quibusdam\"}"
+                            "raw": "{\"email\":\"schulist.amparo@example.org\",\"password\":\"dolorem\"}"
                         },
                         "description": "",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"gutmann.greta@example.net\",\"password\":\"alias\"}"
+                            "raw": "{\"name\":\"eo\",\"username\":\"ut\",\"email\":\"pagac.enrique@example.net\",\"password\":\";zC:md\"}"
                         },
                         "description": "",
                         "auth": {
@@ -102,10 +102,7 @@
                             }
                         ],
                         "body": null,
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
+                        "description": ""
                     },
                     "response": [
                         {
@@ -128,7 +125,7 @@
                                 }
                             ],
                             "code": 500,
-                            "body": "{\n    \"message\": \"Server Error\"\n}",
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -155,7 +152,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"olehner@example.org\",\"password\":\"sed\"}"
+                            "raw": "{\"email\":\"feil.fleta@example.net\",\"password\":\"distinctio\"}"
                         },
                         "description": "",
                         "auth": {
@@ -211,7 +208,7 @@
                                 }
                             ],
                             "code": 500,
-                            "body": "{\n    \"message\": \"Server Error\"\n}",
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
@@ -229,14 +226,35 @@
                         "header": [
                             {
                                 "key": "Content-Type",
-                                "value": "application\/json"
+                                "value": "multipart\/form-data"
                             },
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "title",
+                                    "value": "et",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "body",
+                                    "value": "quos",
+                                    "type": "text",
+                                    "description": ""
+                                },
+                                {
+                                    "key": "image",
+                                    "src": [],
+                                    "type": "file"
+                                }
+                            ]
+                        },
                         "description": "",
                         "auth": {
                             "type": "noauth"
@@ -245,19 +263,19 @@
                     "response": []
                 },
                 {
-                    "name": "GET api\/v1\/posts\/{post}",
+                    "name": "GET api\/v1\/posts\/{id}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/posts\/:post",
+                            "path": "api\/v1\/posts\/:id",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/posts\/:post",
+                            "raw": "{{baseUrl}}\/api\/v1\/posts\/:id",
                             "variable": [
                                 {
-                                    "id": "post",
-                                    "key": "post",
-                                    "value": "reprehenderit",
-                                    "description": "The post."
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the post."
                                 }
                             ]
                         },
@@ -299,25 +317,64 @@
                                 }
                             ],
                             "code": 500,
-                            "body": "{\n    \"message\": \"Server Error\"\n}",
+                            "body": "{\"message\":\"Unauthenticated.\"}",
                             "name": ""
                         }
                     ]
                 },
                 {
-                    "name": "POST api\/v1\/posts\/{post}\/like",
+                    "name": "PUT api\/v1\/posts\/{id}",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/posts\/:post\/like",
+                            "path": "api\/v1\/posts\/:id",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/posts\/:post\/like",
+                            "raw": "{{baseUrl}}\/api\/v1\/posts\/:id",
                             "variable": [
                                 {
-                                    "id": "post",
-                                    "key": "post",
-                                    "value": "asperiores",
-                                    "description": "The post."
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the post."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"sed\",\"body\":\"maxime\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/v1\/posts\/{post_id}\/like",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/posts\/:post_id\/like",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/posts\/:post_id\/like",
+                            "variable": [
+                                {
+                                    "id": "post_id",
+                                    "key": "post_id",
+                                    "value": "1",
+                                    "description": "The ID of the post."
                                 }
                             ]
                         },
@@ -341,19 +398,19 @@
                     "response": []
                 },
                 {
-                    "name": "POST api\/v1\/posts\/{post}\/comment",
+                    "name": "POST api\/v1\/posts\/{post_id}\/comment",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/posts\/:post\/comment",
+                            "path": "api\/v1\/posts\/:post_id\/comment",
                             "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/posts\/:post\/comment",
+                            "raw": "{{baseUrl}}\/api\/v1\/posts\/:post_id\/comment",
                             "variable": [
                                 {
-                                    "id": "post",
-                                    "key": "post",
-                                    "value": "eum",
-                                    "description": "The post."
+                                    "id": "post_id",
+                                    "key": "post_id",
+                                    "value": "1",
+                                    "description": "The ID of the post."
                                 }
                             ]
                         },
@@ -368,7 +425,55 @@
                                 "value": "application\/json"
                             }
                         ],
-                        "body": null,
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"body\":\"voluptatem\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api\/v1\/posts\/{post_id}\/comment\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/posts\/:post_id\/comment\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/posts\/:post_id\/comment\/:id",
+                            "variable": [
+                                {
+                                    "id": "post_id",
+                                    "key": "post_id",
+                                    "value": "1",
+                                    "description": "The ID of the post."
+                                },
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the comment."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"body\":\"et\"}"
+                        },
                         "description": "",
                         "auth": {
                             "type": "noauth"

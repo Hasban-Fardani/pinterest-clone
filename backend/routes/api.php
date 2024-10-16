@@ -9,16 +9,16 @@ Route::prefix('/v1')->name('api.')->group(function () {
     Route::post('register', Api\Auth\RegisterController::class)
         ->name('register');
 
-    Route::middleware('auth:api')->group(function () {
+    Route::middleware('auth:sanctum')->group(function () {
         Route::get('user', Api\Auth\LoginCheckController::class)
             ->name('user');
         Route::post('logout', Api\Auth\LoginController::class)
             ->name('logout');
         
-        Route::get('posts', Api\GetPostController::class);
-        Route::post('posts', Api\CreatePostController::class);
-        Route::get('posts/{post}', Api\GetPostDetailController::class);
-        Route::post('posts/{post}/like', Api\CreatePostLikeController::class);
-        Route::post('posts/{post}/comment', Api\CreatePostCommentController::class);
+        Route::apiResource('posts', Api\PostResourceController::class);
+        Route::apiResource('posts/{post}/like', Api\PostLikeController::class)
+            ->only(['store', 'delete']);
+        Route::apiResource('posts/{post}/comment', Api\PostCommentController::class)
+            ->except('show');
     });
 });

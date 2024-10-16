@@ -28,7 +28,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: katheryn.monahan@example.net
+        example: schulist.amparo@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -37,14 +37,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: quibusdam
+        example: dolorem
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: katheryn.monahan@example.net
-      password: quibusdam
+      email: schulist.amparo@example.org
+      password: dolorem
     fileParameters: []
     responses: []
     responseFields: []
@@ -74,27 +74,47 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
+      name:
+        name: name
+        description: 'Must be between 2 and 100 characters.'
+        required: true
+        example: eo
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      username:
+        name: username
+        description: ''
+        required: true
+        example: ut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
       email:
         name: email
-        description: 'Must be a valid email address.'
+        description: 'Must be a valid email address. Must not be greater than 100 characters.'
         required: true
-        example: gutmann.greta@example.net
+        example: pagac.enrique@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
       password:
         name: password
-        description: ''
+        description: 'Must be at least 6 characters.'
         required: true
-        example: alias
+        example: ';zC:md'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: gutmann.greta@example.net
-      password: alias
+      name: eo
+      username: ut
+      email: pagac.enrique@example.net
+      password: ';zC:md'
     fileParameters: []
     responses: []
     responseFields: []
@@ -114,7 +134,7 @@ endpoints:
       subgroupDescription: ''
       title: ''
       description: ''
-      authenticated: false
+      authenticated: true
       custom: []
     headers:
       Content-Type: application/json
@@ -129,10 +149,7 @@ endpoints:
     responses:
       -
         status: 500
-        content: |-
-          {
-              "message": "Server Error"
-          }
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -171,7 +188,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: olehner@example.org
+        example: feil.fleta@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -180,14 +197,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: sed
+        example: distinctio
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: olehner@example.org
-      password: sed
+      email: feil.fleta@example.net
+      password: distinctio
     fileParameters: []
     responses: []
     responseFields: []
@@ -222,10 +239,7 @@ endpoints:
     responses:
       -
         status: 500
-        content: |-
-          {
-              "message": "Server Error"
-          }
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -253,15 +267,45 @@ endpoints:
       authenticated: false
       custom: []
     headers:
-      Content-Type: application/json
+      Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
+    bodyParameters:
+      image:
+        name: image
+        description: 'Must be an image.'
+        required: true
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      title:
+        name: title
+        description: ''
+        required: true
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      body:
+        name: body
+        description: ''
+        required: true
+        example: quos
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      title: et
+      body: quos
+    fileParameters:
+      image: null
     responses: []
     responseFields: []
     auth: []
@@ -272,7 +316,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/v1/posts/{post}'
+    uri: 'api/v1/posts/{id}'
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -286,17 +330,17 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      post:
-        name: post
-        description: 'The post.'
+      id:
+        name: id
+        description: 'The ID of the post.'
         required: true
-        example: reprehenderit
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      post: reprehenderit
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -305,10 +349,7 @@ endpoints:
     responses:
       -
         status: 500
-        content: |-
-          {
-              "message": "Server Error"
-          }
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -324,8 +365,9 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - POST
-    uri: 'api/v1/posts/{post}/like'
+      - PUT
+      - PATCH
+    uri: 'api/v1/posts/{id}'
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -339,17 +381,77 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      post:
-        name: post
-        description: 'The post.'
+      id:
+        name: id
+        description: 'The ID of the post.'
         required: true
-        example: asperiores
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      post: asperiores
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: ''
+        required: true
+        example: sed
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      body:
+        name: body
+        description: ''
+        required: true
+        example: maxime
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      title: sed
+      body: maxime
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/posts/{post_id}/like'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      post_id:
+        name: post_id
+        description: 'The ID of the post.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      post_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -365,7 +467,7 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: 'api/v1/posts/{post}/comment'
+    uri: 'api/v1/posts/{post_id}/comment'
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -379,21 +481,92 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      post:
-        name: post
-        description: 'The post.'
+      post_id:
+        name: post_id
+        description: 'The ID of the post.'
         required: true
-        example: eum
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      post: eum
+      post_id: 1
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      body:
+        name: body
+        description: ''
+        required: true
+        example: voluptatem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      body: voluptatem
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/posts/{post_id}/comment/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      post_id:
+        name: post_id
+        description: 'The ID of the post.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      id:
+        name: id
+        description: 'The ID of the comment.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      post_id: 1
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      body:
+        name: body
+        description: ''
+        required: true
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      body: et
     fileParameters: []
     responses: []
     responseFields: []
