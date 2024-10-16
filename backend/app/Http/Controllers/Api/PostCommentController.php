@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\PostComment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 /**
@@ -16,10 +17,12 @@ class PostCommentController extends Controller
     public function store(Request $request, Post $post)
     {
         $validator = Validator::make($request->all(), [
-            'body' => 'required|string',
+            'comment' => 'required|string',
         ]);
 
-        $post->comments()->create($validator->validated());
+        $validatedData = $validator->validated();
+        $validatedData['user_id'] = Auth::id();
+        $post->comments()->create($validatedData);
         return response()->json([
             'message' => 'success create comment',
         ]);

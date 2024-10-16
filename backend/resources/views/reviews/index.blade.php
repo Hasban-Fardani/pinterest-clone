@@ -59,7 +59,7 @@
                                             @csrf
                                             @method('PUT')
                                             <input type="hidden" name="status" value="approved">
-                                            <button type="submit" class="btn btn-success btn-sm flex gap-2 w-32" value="approve">
+                                            <button type="submit" class="btn btn-primary btn-sm flex gap-2 w-32" value="approve">
                                                 Approve
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -84,7 +84,7 @@
                                         @csrf
                                         @method('PUT')
                                         <input type="hidden" name="status" value="{{ $review->status == 'approved' ? 'rejected' : 'approved' }}">
-                                        <button type="submit" class="btn {{ $review->status == 'approved' ? 'btn-error' : 'btn-success' }} btn-sm flex gap-2 w-24">
+                                        <button type="submit" class="btn {{ $review->status == 'approved' ? 'btn-error' : 'btn-primary' }} btn-sm flex gap-2 w-24">
                                             {{ $review->status == 'approved' ? 'Reject' : 'Approve' }}
                                         </button>
                                     </form>

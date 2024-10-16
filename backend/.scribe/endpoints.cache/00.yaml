@@ -28,7 +28,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: remington.koss@example.net
+        example: clemmie36@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -37,14 +37,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: enim
+        example: placeat
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: remington.koss@example.net
-      password: enim
+      email: clemmie36@example.net
+      password: placeat
     fileParameters: []
     responses: []
     responseFields: []
@@ -79,7 +79,7 @@ endpoints:
         name: name
         description: 'Must be between 2 and 100 characters.'
         required: true
-        example: cvm
+        example: xps
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -88,7 +88,7 @@ endpoints:
         name: username
         description: ''
         required: true
-        example: ab
+        example: expedita
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -97,7 +97,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 100 characters.'
         required: true
-        example: gwhite@example.net
+        example: jeramie96@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -106,16 +106,16 @@ endpoints:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: "SymOcmU'"
+        example: 'J$TXtjeW&'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: cvm
-      username: ab
-      email: gwhite@example.net
-      password: "SymOcmU'"
+      name: xps
+      username: expedita
+      email: jeramie96@example.com
+      password: 'J$TXtjeW&'
     fileParameters: []
     responses: []
     responseFields: []
@@ -154,7 +154,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"authenticated":true,"user":{"id":2,"name":"user","username":"user","email":"user@localhost","email_verified_at":"2024-10-16T07:29:56.000000Z","role":"user","created_at":"2024-10-16T07:29:56.000000Z","updated_at":"2024-10-16T07:29:56.000000Z"},"token":"7|LBVfLK4sBKpmcFF6lmVp6fXJaq2VFoSO0sWnnc47ab525cce"}'
+        content: '{"authenticated":true,"user":{"id":2,"name":"user","username":"user","email":"user@localhost","email_verified_at":"2024-10-16T07:29:56.000000Z","role":"user","created_at":"2024-10-16T07:29:56.000000Z","updated_at":"2024-10-16T07:29:56.000000Z"},"token":"8|yeD7knpsSTwFG9Y0zXj14dhX4Dre21K1BS7C2AIIc5d9037b"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -196,7 +196,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: nerdman@example.com
+        example: roscoe.stoltenberg@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -205,14 +205,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: commodi
+        example: autem
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: nerdman@example.com
-      password: commodi
+      email: roscoe.stoltenberg@example.com
+      password: autem
     fileParameters: []
     responses: []
     responseFields: []
@@ -247,7 +247,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: fklq
+        example: humeeuexffzjxspdbwjt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -256,7 +256,7 @@ endpoints:
         name: username
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: ww
+        example: ztwxrzybpdxr
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -265,15 +265,15 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: jena.crooks@example.com
+        example: ignatius36@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: fklq
-      username: ww
-      email: jena.crooks@example.com
+      name: humeeuexffzjxspdbwjt
+      username: ztwxrzybpdxr
+      email: ignatius36@example.org
     fileParameters: []
     responses: []
     responseFields: []
@@ -311,13 +311,13 @@ endpoints:
         name: password
         description: 'Must be at least 8 characters.'
         required: true
-        example: 'zjPAr-['
+        example: 'L>M/DoSQPF:fY'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      password: 'zjPAr-['
+      password: 'L>M/DoSQPF:fY'
     fileParameters: []
     responses: []
     responseFields: []
@@ -408,7 +408,7 @@ endpoints:
         name: title
         description: ''
         required: true
-        example: quam
+        example: eos
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -417,14 +417,14 @@ endpoints:
         name: body
         description: ''
         required: true
-        example: consequatur
+        example: doloribus
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: quam
-      body: consequatur
+      title: eos
+      body: doloribus
     fileParameters:
       image: null
     responses: []
@@ -474,7 +474,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"message":"success get post","post":{"id":1,"title":"Enim rem vel voluptas repellat ea.","image":"104585f5c9cc3d21cb264b9c1136bfcb.png","user_id":6,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z","likes_count":18,"comments_count":16,"likes":[{"id":2,"post_id":1,"user_id":8,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"},{"id":3,"post_id":1,"user_id":3,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"},{"id":7,"post_id":1,"user_id":6,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"},{"id":9,"post_id":1,"user_id":6,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"},{"id":12,"post_id":1,"user_id":5,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"},{"id":21,"post_id":1,"user_id":4,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":23,"post_id":1,"user_id":2,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":24,"post_id":1,"user_id":5,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":28,"post_id":1,"user_id":1,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":29,"post_id":1,"user_id":7,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":31,"post_id":1,"user_id":2,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":41,"post_id":1,"user_id":4,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":54,"post_id":1,"user_id":10,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":57,"post_id":1,"user_id":8,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":59,"post_id":1,"user_id":2,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":64,"post_id":1,"user_id":4,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":95,"post_id":1,"user_id":9,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":98,"post_id":1,"user_id":10,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"}],"comments":[{"id":13,"post_id":1,"user_id":6,"comment":"Odio soluta iste veritatis nesciunt rem veritatis.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":14,"post_id":1,"user_id":10,"comment":"Consequatur ad placeat neque iure dolore alias autem doloremque.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":19,"post_id":1,"user_id":4,"comment":"Incidunt quis non qui quia.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":20,"post_id":1,"user_id":6,"comment":"Iusto voluptas facere qui pariatur animi unde.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":21,"post_id":1,"user_id":9,"comment":"Expedita placeat sed doloribus sit minus quibusdam.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":22,"post_id":1,"user_id":9,"comment":"Quae modi delectus natus similique non rerum nobis.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":23,"post_id":1,"user_id":4,"comment":"Recusandae quis animi omnis mollitia.","status":"approved","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":34,"post_id":1,"user_id":8,"comment":"Quod aliquid eum molestiae illo.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":36,"post_id":1,"user_id":6,"comment":"Cum et dolore et corrupti voluptatibus.","status":"approved","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":37,"post_id":1,"user_id":5,"comment":"Perspiciatis mollitia quo facilis modi dolorum ad aut.","status":"approved","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":40,"post_id":1,"user_id":10,"comment":"Ut deleniti est vitae consequatur possimus.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":45,"post_id":1,"user_id":4,"comment":"In saepe non sit ea eum autem neque suscipit.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":46,"post_id":1,"user_id":10,"comment":"Non quis expedita tempora tempora occaecati dolor omnis.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":65,"post_id":1,"user_id":10,"comment":"Nulla eaque dolores sint quaerat deleniti alias.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":80,"post_id":1,"user_id":4,"comment":"Non minus adipisci at in dolor et repellendus.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":89,"post_id":1,"user_id":2,"comment":"Voluptatem non omnis perferendis non fugiat.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"}],"user":{"id":6,"name":"Dr. D''angelo Haley II","username":"ova54"}}}'
+        content: '{"message":"success get post","post":{"id":1,"title":"Enim rem vel voluptas repellat ea.","image":"104585f5c9cc3d21cb264b9c1136bfcb.png","user_id":6,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z","likes_count":16,"comments_count":17,"likes":[{"id":2,"post_id":1,"user_id":8,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"},{"id":3,"post_id":1,"user_id":3,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"},{"id":7,"post_id":1,"user_id":6,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"},{"id":9,"post_id":1,"user_id":6,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"},{"id":12,"post_id":1,"user_id":5,"created_at":"2024-10-16T07:53:06.000000Z","updated_at":"2024-10-16T07:53:06.000000Z"},{"id":21,"post_id":1,"user_id":4,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":24,"post_id":1,"user_id":5,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":28,"post_id":1,"user_id":1,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":29,"post_id":1,"user_id":7,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":41,"post_id":1,"user_id":4,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":54,"post_id":1,"user_id":10,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":57,"post_id":1,"user_id":8,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":64,"post_id":1,"user_id":4,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":95,"post_id":1,"user_id":9,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":98,"post_id":1,"user_id":10,"created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":102,"post_id":1,"user_id":2,"created_at":"2024-10-16T09:31:51.000000Z","updated_at":"2024-10-16T09:31:51.000000Z"}],"comments":[{"id":13,"post_id":1,"user_id":6,"comment":"Odio soluta iste veritatis nesciunt rem veritatis.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":14,"post_id":1,"user_id":10,"comment":"Consequatur ad placeat neque iure dolore alias autem doloremque.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":19,"post_id":1,"user_id":4,"comment":"Incidunt quis non qui quia.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":20,"post_id":1,"user_id":6,"comment":"Iusto voluptas facere qui pariatur animi unde.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":21,"post_id":1,"user_id":9,"comment":"Expedita placeat sed doloribus sit minus quibusdam.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":22,"post_id":1,"user_id":9,"comment":"Quae modi delectus natus similique non rerum nobis.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":23,"post_id":1,"user_id":4,"comment":"Recusandae quis animi omnis mollitia.","status":"approved","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":34,"post_id":1,"user_id":8,"comment":"Quod aliquid eum molestiae illo.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":36,"post_id":1,"user_id":6,"comment":"Cum et dolore et corrupti voluptatibus.","status":"approved","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":37,"post_id":1,"user_id":5,"comment":"Perspiciatis mollitia quo facilis modi dolorum ad aut.","status":"approved","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":40,"post_id":1,"user_id":10,"comment":"Ut deleniti est vitae consequatur possimus.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":45,"post_id":1,"user_id":4,"comment":"In saepe non sit ea eum autem neque suscipit.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":46,"post_id":1,"user_id":10,"comment":"Non quis expedita tempora tempora occaecati dolor omnis.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":65,"post_id":1,"user_id":10,"comment":"Nulla eaque dolores sint quaerat deleniti alias.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":80,"post_id":1,"user_id":4,"comment":"Non minus adipisci at in dolor et repellendus.","status":"rejected","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":89,"post_id":1,"user_id":2,"comment":"Voluptatem non omnis perferendis non fugiat.","status":"pending","created_at":"2024-10-16T07:53:07.000000Z","updated_at":"2024-10-16T07:53:07.000000Z"},{"id":101,"post_id":1,"user_id":2,"comment":"hello, this is comment from user biasa","status":"approved","created_at":"2024-10-16T09:33:56.000000Z","updated_at":"2024-10-16T09:34:35.000000Z"}],"user":{"id":6,"name":"Dr. D''angelo Haley II","username":"ova54"}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -537,7 +537,7 @@ endpoints:
         name: title
         description: 'Must not be greater than 100 characters.'
         required: false
-        example: jjahmma
+        example: ipjbltfhocbqfuuum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -546,14 +546,14 @@ endpoints:
         name: body
         description: ''
         required: false
-        example: neque
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: jjahmma
-      body: neque
+      title: ipjbltfhocbqfuuum
+      body: aut
     fileParameters:
       image: null
     responses: []
@@ -686,8 +686,8 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      body:
-        name: body
+      comment:
+        name: comment
         description: ''
         required: true
         example: dolores
@@ -696,7 +696,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      body: dolores
+      comment: dolores
     fileParameters: []
     responses: []
     responseFields: []
@@ -755,13 +755,13 @@ endpoints:
         name: body
         description: ''
         required: true
-        example: non
+        example: distinctio
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      body: non
+      body: distinctio
     fileParameters: []
     responses: []
     responseFields: []

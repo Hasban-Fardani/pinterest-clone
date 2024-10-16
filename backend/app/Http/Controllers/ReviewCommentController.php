@@ -14,7 +14,8 @@ class ReviewCommentController extends Controller
     public function index(Request $request)
     {
         $reviews = PostComment::query()
-            ->with(['user:id,name', 'post:id,title,image']);
+            ->with(['user:id,name', 'post:id,title,image'])
+            ->latest();
 
         $reviews->when($request->input('q'), function ($reviews, $search) {
             $reviews->where(function ($query) use ($search) {

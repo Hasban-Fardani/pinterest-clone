@@ -15,6 +15,7 @@ class PostLikeController extends Controller
     public function __invoke(Request $request, Post $post)
     {
         $like = $post->likes()->where('user_id', $request->user()->id)->first();
+        $type = $like === null ? ' like' : ' unlike';
         if ($like !== null) {
             $like->delete();
         } else {
@@ -23,7 +24,6 @@ class PostLikeController extends Controller
             ]);
         }
 
-        $type = $like === null ? ' like' : ' unlike';
         return response()->json([
             'message' => 'success' . $type . ' post',
         ]);
