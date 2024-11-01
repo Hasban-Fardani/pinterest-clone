@@ -26,11 +26,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: clemmie36@example.net
+                  example: jonas.heller@example.org
                 password:
                   type: string
                   description: ''
-                  example: placeat
+                  example: sit
               required:
                 - email
                 - password
@@ -54,166 +54,23 @@ paths:
                 name:
                   type: string
                   description: 'Must be between 2 and 100 characters.'
-                  example: xps
+                  example: qc
                 username:
                   type: string
                   description: ''
-                  example: expedita
+                  example: molestias
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 100 characters.'
-                  example: jeramie96@example.com
+                  example: rory.raynor@example.org
                 password:
                   type: string
                   description: 'Must be at least 6 characters.'
-                  example: 'J$TXtjeW&'
+                  example: 'j,lkkt!kATHa:&WL(V^O'
               required:
                 - name
                 - username
                 - email
-                - password
-  /api/v1/user:
-    get:
-      summary: ''
-      operationId: getApiV1User
-      description: ''
-      parameters: []
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  authenticated: true
-                  user:
-                    id: 2
-                    name: user
-                    username: user
-                    email: user@localhost
-                    email_verified_at: '2024-10-16T07:29:56.000000Z'
-                    role: user
-                    created_at: '2024-10-16T07:29:56.000000Z'
-                    updated_at: '2024-10-16T07:29:56.000000Z'
-                  token: 8|yeD7knpsSTwFG9Y0zXj14dhX4Dre21K1BS7C2AIIc5d9037b
-                properties:
-                  authenticated:
-                    type: boolean
-                    example: true
-                  user:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                        example: 2
-                      name:
-                        type: string
-                        example: user
-                      username:
-                        type: string
-                        example: user
-                      email:
-                        type: string
-                        example: user@localhost
-                      email_verified_at:
-                        type: string
-                        example: '2024-10-16T07:29:56.000000Z'
-                      role:
-                        type: string
-                        example: user
-                      created_at:
-                        type: string
-                        example: '2024-10-16T07:29:56.000000Z'
-                      updated_at:
-                        type: string
-                        example: '2024-10-16T07:29:56.000000Z'
-                  token:
-                    type: string
-                    example: 8|yeD7knpsSTwFG9Y0zXj14dhX4Dre21K1BS7C2AIIc5d9037b
-      tags:
-        - Endpoints
-  /api/v1/logout:
-    post:
-      summary: ''
-      operationId: postApiV1Logout
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                  description: 'Must be a valid email address.'
-                  example: roscoe.stoltenberg@example.com
-                password:
-                  type: string
-                  description: ''
-                  example: autem
-              required:
-                - email
-                - password
-      security: []
-  /api/v1/profile:
-    put:
-      summary: ''
-      operationId: putApiV1Profile
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: humeeuexffzjxspdbwjt
-                username:
-                  type: string
-                  description: 'Must not be greater than 255 characters.'
-                  example: ztwxrzybpdxr
-                email:
-                  type: string
-                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: ignatius36@example.org
-              required:
-                - name
-                - username
-                - email
-  /api/v1/reset-password:
-    put:
-      summary: ''
-      operationId: putApiV1ResetPassword
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                password:
-                  type: string
-                  description: 'Must be at least 8 characters.'
-                  example: 'L>M/DoSQPF:fY'
-              required:
                 - password
   /api/v1/posts:
     get:
@@ -531,15 +388,158 @@ paths:
                 title:
                   type: string
                   description: ''
-                  example: eos
+                  example: ullam
                 body:
                   type: string
                   description: ''
-                  example: doloribus
+                  example: et
               required:
                 - image
                 - title
                 - body
+  /api/v1/user:
+    get:
+      summary: ''
+      operationId: getApiV1User
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  authenticated: true
+                  user:
+                    id: 2
+                    name: user
+                    username: user
+                    email: user@localhost
+                    email_verified_at: '2024-10-16T07:29:56.000000Z'
+                    role: user
+                    created_at: '2024-10-16T07:29:56.000000Z'
+                    updated_at: '2024-10-16T07:29:56.000000Z'
+                  token: 9|Aa2TLki6qIjpg0nrwreqwl5bFc97CyQho7045ohT0eae4891
+                properties:
+                  authenticated:
+                    type: boolean
+                    example: true
+                  user:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 2
+                      name:
+                        type: string
+                        example: user
+                      username:
+                        type: string
+                        example: user
+                      email:
+                        type: string
+                        example: user@localhost
+                      email_verified_at:
+                        type: string
+                        example: '2024-10-16T07:29:56.000000Z'
+                      role:
+                        type: string
+                        example: user
+                      created_at:
+                        type: string
+                        example: '2024-10-16T07:29:56.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2024-10-16T07:29:56.000000Z'
+                  token:
+                    type: string
+                    example: 9|Aa2TLki6qIjpg0nrwreqwl5bFc97CyQho7045ohT0eae4891
+      tags:
+        - Endpoints
+  /api/v1/logout:
+    post:
+      summary: ''
+      operationId: postApiV1Logout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: dangelo.abshire@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: itaque
+              required:
+                - email
+                - password
+      security: []
+  /api/v1/profile:
+    put:
+      summary: ''
+      operationId: putApiV1Profile
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: isxcspamsvcapnkxluxs
+                username:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: mtzqnfnkooolpaxxma
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: qwiegand@example.org
+              required:
+                - name
+                - username
+                - email
+  /api/v1/reset-password:
+    put:
+      summary: ''
+      operationId: putApiV1ResetPassword
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  description: 'Must be at least 8 characters.'
+                  example: '`-uj1Jui?"u2Y].'
+              required:
+                - password
   '/api/v1/posts/{id}':
     get:
       summary: ''
@@ -1149,11 +1149,11 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 100 characters.'
-                  example: ipjbltfhocbqfuuum
+                  example: yjtugipmhzaorpbuwcmlsmnus
                 body:
                   type: string
                   description: ''
-                  example: aut
+                  example: non
     delete:
       summary: ''
       operationId: deleteApiV1PostsId
@@ -1208,7 +1208,7 @@ paths:
                 comment:
                   type: string
                   description: ''
-                  example: dolores
+                  example: quidem
               required:
                 - comment
     parameters:
@@ -1239,7 +1239,7 @@ paths:
                 body:
                   type: string
                   description: ''
-                  example: distinctio
+                  example: ad
               required:
                 - body
     parameters:

@@ -9,6 +9,8 @@ Route::prefix('/v1')->name('api.')->group(function () {
     Route::post('register', Api\Auth\RegisterController::class)
         ->name('register');
 
+    // get posts before login
+    Route::get('/posts', [Api\PostResourceController::class, 'index']);
     Route::middleware('auth:sanctum')->group(function () {
         Route::get('user', Api\Auth\LoginCheckController::class)
             ->name('user');

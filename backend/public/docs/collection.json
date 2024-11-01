@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "a96d72be-6480-4712-9c88-f5d182aa414b",
+        "_postman_id": "42f885d7-95e2-4665-aaac-3bdf749e79fb",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"clemmie36@example.net\",\"password\":\"placeat\"}"
+                            "raw": "{\"email\":\"jonas.heller@example.org\",\"password\":\"sit\"}"
                         },
                         "description": "",
                         "auth": {
@@ -72,143 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"xps\",\"username\":\"expedita\",\"email\":\"jeramie96@example.com\",\"password\":\"J$TXtjeW&\"}"
-                        },
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "GET api\/v1\/user",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/user",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/user"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "http:\/\/localhost:3000"
-                                },
-                                {
-                                    "key": "access-control-allow-credentials",
-                                    "value": "true"
-                                }
-                            ],
-                            "code": 200,
-                            "body": "{\"authenticated\":true,\"user\":{\"id\":2,\"name\":\"user\",\"username\":\"user\",\"email\":\"user@localhost\",\"email_verified_at\":\"2024-10-16T07:29:56.000000Z\",\"role\":\"user\",\"created_at\":\"2024-10-16T07:29:56.000000Z\",\"updated_at\":\"2024-10-16T07:29:56.000000Z\"},\"token\":\"8|yeD7knpsSTwFG9Y0zXj14dhX4Dre21K1BS7C2AIIc5d9037b\"}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "POST api\/v1\/logout",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/logout",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/logout"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"email\":\"roscoe.stoltenberg@example.com\",\"password\":\"autem\"}"
-                        },
-                        "description": "",
-                        "auth": {
-                            "type": "noauth"
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "PUT api\/v1\/profile",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/profile",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/profile"
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"name\":\"humeeuexffzjxspdbwjt\",\"username\":\"ztwxrzybpdxr\",\"email\":\"ignatius36@example.org\"}"
-                        },
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
-                    "name": "PUT api\/v1\/reset-password",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/reset-password",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/reset-password"
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"password\":\"L>M\\\/DoSQPF:fY\"}"
+                            "raw": "{\"name\":\"qc\",\"username\":\"molestias\",\"email\":\"rory.raynor@example.org\",\"password\":\"j,lkkt!kATHa:&WL(V^O\"}"
                         },
                         "description": ""
                     },
@@ -264,6 +128,142 @@
                     ]
                 },
                 {
+                    "name": "GET api\/v1\/user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "http:\/\/localhost:3000"
+                                },
+                                {
+                                    "key": "access-control-allow-credentials",
+                                    "value": "true"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"authenticated\":true,\"user\":{\"id\":2,\"name\":\"user\",\"username\":\"user\",\"email\":\"user@localhost\",\"email_verified_at\":\"2024-10-16T07:29:56.000000Z\",\"role\":\"user\",\"created_at\":\"2024-10-16T07:29:56.000000Z\",\"updated_at\":\"2024-10-16T07:29:56.000000Z\"},\"token\":\"9|Aa2TLki6qIjpg0nrwreqwl5bFc97CyQho7045ohT0eae4891\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/v1\/logout",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/logout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"dangelo.abshire@example.net\",\"password\":\"itaque\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api\/v1\/profile",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/profile",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/profile"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"isxcspamsvcapnkxluxs\",\"username\":\"mtzqnfnkooolpaxxma\",\"email\":\"qwiegand@example.org\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api\/v1\/reset-password",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/reset-password",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/reset-password"
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"password\":\"`-uj1Jui?\\\"u2Y].\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
                     "name": "POST api\/v1\/posts",
                     "request": {
                         "url": {
@@ -288,13 +288,13 @@
                             "formdata": [
                                 {
                                     "key": "title",
-                                    "value": "eos",
+                                    "value": "ullam",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "body",
-                                    "value": "doloribus",
+                                    "value": "et",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -399,13 +399,13 @@
                             "formdata": [
                                 {
                                     "key": "title",
-                                    "value": "ipjbltfhocbqfuuum",
+                                    "value": "yjtugipmhzaorpbuwcmlsmnus",
                                     "type": "text",
                                     "description": "Must not be greater than 100 characters."
                                 },
                                 {
                                     "key": "body",
-                                    "value": "aut",
+                                    "value": "non",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -521,7 +521,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"comment\":\"dolores\"}"
+                            "raw": "{\"comment\":\"quidem\"}"
                         },
                         "description": ""
                     },
@@ -563,7 +563,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"body\":\"distinctio\"}"
+                            "raw": "{\"body\":\"ad\"}"
                         },
                         "description": ""
                     },

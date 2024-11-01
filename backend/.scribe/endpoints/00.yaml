@@ -26,7 +26,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: clemmie36@example.net
+        example: jonas.heller@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -35,14 +35,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: placeat
+        example: sit
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: clemmie36@example.net
-      password: placeat
+      email: jonas.heller@example.org
+      password: sit
     fileParameters: []
     responses: []
     responseFields: []
@@ -77,7 +77,7 @@ endpoints:
         name: name
         description: 'Must be between 2 and 100 characters.'
         required: true
-        example: xps
+        example: qc
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -86,7 +86,7 @@ endpoints:
         name: username
         description: ''
         required: true
-        example: expedita
+        example: molestias
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -95,7 +95,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 100 characters.'
         required: true
-        example: jeramie96@example.com
+        example: rory.raynor@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -104,218 +104,16 @@ endpoints:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: 'J$TXtjeW&'
+        example: 'j,lkkt!kATHa:&WL(V^O'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: xps
-      username: expedita
-      email: jeramie96@example.com
-      password: 'J$TXtjeW&'
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
-    uri: api/v1/user
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"authenticated":true,"user":{"id":2,"name":"user","username":"user","email":"user@localhost","email_verified_at":"2024-10-16T07:29:56.000000Z","role":"user","created_at":"2024-10-16T07:29:56.000000Z","updated_at":"2024-10-16T07:29:56.000000Z"},"token":"8|yeD7knpsSTwFG9Y0zXj14dhX4Dre21K1BS7C2AIIc5d9037b"}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: 'http://localhost:3000'
-          access-control-allow-credentials: 'true'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/logout
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      email:
-        name: email
-        description: 'Must be a valid email address.'
-        required: true
-        example: roscoe.stoltenberg@example.com
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      password:
-        name: password
-        description: ''
-        required: true
-        example: autem
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      email: roscoe.stoltenberg@example.com
-      password: autem
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: api/v1/profile
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: humeeuexffzjxspdbwjt
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      username:
-        name: username
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: ztwxrzybpdxr
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      email:
-        name: email
-        description: 'Must be a valid email address. Must not be greater than 255 characters.'
-        required: true
-        example: ignatius36@example.org
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      name: humeeuexffzjxspdbwjt
-      username: ztwxrzybpdxr
-      email: ignatius36@example.org
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-    uri: api/v1/reset-password
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      password:
-        name: password
-        description: 'Must be at least 8 characters.'
-        required: true
-        example: 'L>M/DoSQPF:fY'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      password: 'L>M/DoSQPF:fY'
+      name: qc
+      username: molestias
+      email: rory.raynor@example.org
+      password: 'j,lkkt!kATHa:&WL(V^O'
     fileParameters: []
     responses: []
     responseFields: []
@@ -373,6 +171,208 @@ endpoints:
     custom: []
   -
     httpMethods:
+      - GET
+    uri: api/v1/user
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"authenticated":true,"user":{"id":2,"name":"user","username":"user","email":"user@localhost","email_verified_at":"2024-10-16T07:29:56.000000Z","role":"user","created_at":"2024-10-16T07:29:56.000000Z","updated_at":"2024-10-16T07:29:56.000000Z"},"token":"9|Aa2TLki6qIjpg0nrwreqwl5bFc97CyQho7045ohT0eae4891"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: 'http://localhost:3000'
+          access-control-allow-credentials: 'true'
+        description: null
+        custom: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/logout
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: dangelo.abshire@example.net
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: itaque
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      email: dangelo.abshire@example.net
+      password: itaque
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/v1/profile
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: isxcspamsvcapnkxluxs
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      username:
+        name: username
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: mtzqnfnkooolpaxxma
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address. Must not be greater than 255 characters.'
+        required: true
+        example: qwiegand@example.org
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: isxcspamsvcapnkxluxs
+      username: mtzqnfnkooolpaxxma
+      email: qwiegand@example.org
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/v1/reset-password
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: true
+      custom: []
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      password:
+        name: password
+        description: 'Must be at least 8 characters.'
+        required: true
+        example: '`-uj1Jui?"u2Y].'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      password: '`-uj1Jui?"u2Y].'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3|3kjFxOI68ejAr4O32GmvZLFo0Du1dhUbsyFPD9fl500bfa96'
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
       - POST
     uri: api/v1/posts
     metadata:
@@ -406,7 +406,7 @@ endpoints:
         name: title
         description: ''
         required: true
-        example: eos
+        example: ullam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -415,14 +415,14 @@ endpoints:
         name: body
         description: ''
         required: true
-        example: doloribus
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: eos
-      body: doloribus
+      title: ullam
+      body: et
     fileParameters:
       image: null
     responses: []
@@ -535,7 +535,7 @@ endpoints:
         name: title
         description: 'Must not be greater than 100 characters.'
         required: false
-        example: ipjbltfhocbqfuuum
+        example: yjtugipmhzaorpbuwcmlsmnus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -544,14 +544,14 @@ endpoints:
         name: body
         description: ''
         required: false
-        example: aut
+        example: non
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: ipjbltfhocbqfuuum
-      body: aut
+      title: yjtugipmhzaorpbuwcmlsmnus
+      body: non
     fileParameters:
       image: null
     responses: []
@@ -688,13 +688,13 @@ endpoints:
         name: comment
         description: ''
         required: true
-        example: dolores
+        example: quidem
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      comment: dolores
+      comment: quidem
     fileParameters: []
     responses: []
     responseFields: []
@@ -753,13 +753,13 @@ endpoints:
         name: body
         description: ''
         required: true
-        example: distinctio
+        example: ad
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      body: distinctio
+      body: ad
     fileParameters: []
     responses: []
     responseFields: []
